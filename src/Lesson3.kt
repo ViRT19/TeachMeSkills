@@ -40,10 +40,15 @@ fun menu1() {
     val str: String = readln().toString()
     var palindrom: Boolean = true
     val count: Int = str.length
-    for (i in 1..count / 2)
-        if (str.substring(i, i) != str.substring(count - i, count - i))
-            palindrom = false
-    val res: String = if (palindrom) "" else "не"
+    var c1: Char
+    var c2: Char
+    for (i in 1..count / 2) {
+        c1 = str.get(i - 1)
+        c2 = str.get(count - i)
+        if (c1 != c2) palindrom = false
+    }
+
+    val res: String = if (palindrom) "" else " не"
     println("Число $str$res палиндром.")
 }
 
