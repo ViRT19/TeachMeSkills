@@ -1,0 +1,556 @@
+openapi: 3.0.3
+info:
+  title: DestiNumber Server API
+  version: 1.0.0
+  description: DestiNumber predictions server
+paths:
+  /api/auth/login/:
+    post:
+      operationId: auth_login_create
+      description: |-
+        Takes a set of user credentials and returns an access and refresh JSON web
+        token pair to prove the authentication of those credentials.
+      summary: Login a user
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomTokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CustomTokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CustomTokenObtainPair'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+          description: ''
+  /api/auth/profile/:
+    get:
+      operationId: auth_profile_retrieve
+      summary: Get user profile
+      tags:
+      - User
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+  /api/auth/profile/update/:
+    put:
+      operationId: auth_profile_update_update
+      summary: Update user profile
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserProfile'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+    patch:
+      operationId: auth_profile_update_partial_update
+      summary: Update user profile
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUserProfile'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+          description: ''
+  /api/auth/refresh/:
+    post:
+      operationId: auth_refresh_create
+      description: |-
+        Takes a refresh type JSON web token and returns an access type JSON web
+        token if the refresh token is valid.
+      summary: Refresh JWT token
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefreshRequest'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+          description: ''
+  /api/auth/register/:
+    post:
+      operationId: auth_register_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRegistration'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserRegistration'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserRegistration'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserRegistration'
+          description: ''
+  /api/healthcheck/:
+    get:
+      operationId: healthcheck_retrieve
+      description: Returns server's datetime
+      summary: Healthcheck endpoint
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  utc_time:
+                    type: string
+          description: ''
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Some error message
+                required:
+                - error
+              examples:
+                InvalidRequest:
+                  value:
+                    error: Invalid request
+                  summary: Invalid Request
+          description: Bad request - Invalid input data
+  /api/predictions/:
+    get:
+      operationId: predictions_retrieve
+      description: Retrieve all prediction acts for the authenticated user.
+      summary: List user's prediction acts
+      tags:
+      - Predictions
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PredictionAct'
+          description: List of prediction acts retrieved successfully
+        '400':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Some error message
+                required:
+                - error
+              examples:
+                InvalidRequest:
+                  value:
+                    error: Invalid request
+                  summary: Invalid Request
+          description: Bad request - Invalid input data
+        '401':
+          description: Unauthorized - User not authenticated
+        '403':
+          description: Forbidden - User doesn't have permission
+    post:
+      operationId: predictions_create
+      description: "\n        Create a new prediction act for the authenticated user\
+        \ based on user's prediction\n        choice (or destiny card number).\n \
+        \       "
+      summary: Create prediction act
+      tags:
+      - Predictions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              schema:
+                type: object
+                properties:
+                  prediction_num:
+                    type: integer
+                    description: Index of the prediction to save (0-based)
+                    example: 0
+                  date:
+                    type: string
+                    format: date
+                    description: Date of the prediction in YYYY-MM-DD format
+                    example: '2023-12-31'
+                required:
+                - prediction_num
+                - date
+            examples:
+              ValidRequest:
+                value:
+                  prediction_num: 2
+                  date: '2023-12-31'
+                summary: Valid Request
+              MissingField:
+                value: {}
+                summary: Missing Field
+                description: Example of missing required fields
+              InvalidDateFormat:
+                value:
+                  prediction_num: 1
+                  date: 31-12-2023
+                summary: Invalid Date Format
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredictionAct'
+          description: Prediction act created successfully
+        '400':
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - type: object
+                  properties:
+                    status:
+                      type: string
+                      example: error
+                    message:
+                      type: string
+                      example: 'Missing field: prediction_num'
+                  required:
+                  - status
+                  - message
+                - type: object
+                  properties:
+                    error:
+                      type: string
+                      example: Invalid date format. Use YYYY-MM-DD.
+                  required:
+                  - error
+                - type: object
+                  properties:
+                    status:
+                      type: string
+                      example: error
+                    message:
+                      type: string
+                      example: Not enough prediction attempts
+                  required:
+                  - status
+                  - message
+                - type: object
+                  properties:
+                    status:
+                      type: string
+                      example: error
+                    message:
+                      type: string
+                      example: Prediction for date 2023-12-31 for user testuser already
+                        exists
+                  required:
+                  - status
+                  - message
+                - type: object
+                  properties:
+                    status:
+                      type: string
+                      example: error
+                    message:
+                      type: string
+                      example: The prediction date is not in the future or not within
+                        three weeks from now
+                  required:
+                  - status
+                  - message
+              examples:
+                MissingField:
+                  value:
+                    status: error
+                    message: 'Missing field: prediction_num'
+                  summary: Missing Field
+                InvalidDateFormat:
+                  value:
+                    error: Invalid date format. Use YYYY-MM-DD.
+                  summary: Invalid Date Format
+                NotEnoughAttempts:
+                  value:
+                    status: error
+                    message: Not enough prediction attempts
+                  summary: Not Enough Attempts
+                PredictionAlreadyExists:
+                  value:
+                    status: error
+                    message: Prediction for date 2023-12-31 for user testuser already
+                      exists
+                  summary: Prediction Already Exists
+                DateNotWithinThreeWeeks:
+                  value:
+                    status: error
+                    message: The prediction date is not in the future or not within
+                      three weeks from now
+                  summary: Date Not Within Three Weeks
+          description: Bad request - Invalid input data
+        '401':
+          description: Unauthorized - Authentication credentials were not provided
+        '403':
+          description: Forbidden - User doesn't have permission
+        '404':
+          description: Not Found - Prediction index out of range
+components:
+  schemas:
+    CustomTokenObtainPair:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+      required:
+      - password
+      - username
+    PatchedUserProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          title: Имя пользователя
+          description: Обязательное поле. Не более 150 символов. Только буквы, цифры
+            и символы @/./+/-/_.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          title: Адрес электронной почты
+          maxLength: 254
+        first_name:
+          type: string
+          title: Имя
+          maxLength: 150
+        last_name:
+          type: string
+          title: Фамилия
+          maxLength: 150
+        date_of_birth:
+          type: string
+          format: date
+          nullable: true
+        destiny_number:
+          type: integer
+          readOnly: true
+        prediction_attempts:
+          type: integer
+          readOnly: true
+          title: Predictions attempts numbers
+    Prediction:
+      type: object
+      properties:
+        prediction_type:
+          $ref: '#/components/schemas/PredictionTypeEnum'
+        text:
+          type: string
+          title: Prediction Text
+          description: The input text for prediction
+          maxLength: 2048
+      required:
+      - text
+    PredictionAct:
+      type: object
+      properties:
+        prediction:
+          $ref: '#/components/schemas/Prediction'
+        prediction_date:
+          type: string
+          format: date
+      required:
+      - prediction
+      - prediction_date
+    PredictionTypeEnum:
+      enum:
+      - GOOD
+      - BAD
+      type: string
+      description: |-
+        * `GOOD` - Good Prediction
+        * `BAD` - Bad Prediction
+    TokenRefreshRequest:
+      type: object
+      properties:
+        refresh:
+          type: string
+        access:
+          type: string
+          readOnly: true
+      required:
+      - access
+      - refresh
+    TokenResponse:
+      type: object
+      properties:
+        access:
+          type: string
+        refresh:
+          type: string
+      required:
+      - access
+      - refresh
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        username:
+          type: string
+          title: Имя пользователя
+          description: Обязательное поле. Не более 150 символов. Только буквы, цифры
+            и символы @/./+/-/_.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          title: Адрес электронной почты
+          maxLength: 254
+        first_name:
+          type: string
+          title: Имя
+          maxLength: 150
+        last_name:
+          type: string
+          title: Фамилия
+          maxLength: 150
+        date_of_birth:
+          type: string
+          format: date
+          nullable: true
+        destiny_number:
+          type: integer
+          readOnly: true
+        prediction_attempts:
+          type: integer
+          readOnly: true
+          title: Predictions attempts numbers
+      required:
+      - destiny_number
+      - id
+      - prediction_attempts
+      - username
+    UserRegistration:
+      type: object
+      properties:
+        username:
+          type: string
+          title: Имя пользователя
+          description: Обязательное поле. Не более 150 символов. Только буквы, цифры
+            и символы @/./+/-/_.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          title: Адрес электронной почты
+          maxLength: 254
+        password:
+          type: string
+          writeOnly: true
+        first_name:
+          type: string
+          title: Имя
+          maxLength: 150
+        last_name:
+          type: string
+          title: Фамилия
+          maxLength: 150
+        date_of_birth:
+          type: string
+          format: date
+          nullable: true
+      required:
+      - password
+      - username
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

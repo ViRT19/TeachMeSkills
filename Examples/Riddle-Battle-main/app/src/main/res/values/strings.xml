@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Riddle (Battle of the teams)</string>
+    <string name="start">START</string>
+    <string name="question">Question</string>
+    <string name="battle_of_the_team">Battle of the teams</string>
+    <string name="program_version">Program version: 1.0</string>
+    <string name="program_developer">Developer: Alexei Titov</string>
+    <string name="description_logo" translatable="false">logo</string>
+    <string name="select_language">Select language</string>
+    <string name="save">Save</string>
+    <string name="russian">Russian</string>
+    <string name="english">English</string>
+    <string name="settings_saved">Settings saved</string>
+    <string name="settings_not_saved">Settings not saved</string>
+    <string name="language">Language</string>
+    <string name="select_number_teams">Select the number of teams</string>
+    <string name="play">Play</string>
+    <string name="enter_command_name">Enter the command name</string>
+    <string name="team">Team</string>
+    <string name="fill_all_name_teams">Fill in all the team names</string>
+    <string name="next">Next</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="are_you_ready">Are you ready?</string>
+    <string name="loading_riddle">Riddle is loading</string>
+    <string name="the_teams_start">The team starts:</string>
+    <string name="next_team">Next team</string>
+    <string name="results">Results</string>
+    <string name="play_again">Play again</string>
+    <string name="correct">correct</string>
+    <string name="teams_name_must_not_repeated">Team names must not be repeated</string>
+    <string name="no_teams">Teams is not created</string>
+    <string name="loading_error">Loading error:</string>
+    <string name="round_is_over">Your round is over</string>
+    <string name="failed_load_riddles">Failed to load riddles after update</string>
+    <string name="error_getting_riddle">Error getting random riddle</string>
+</resources>
