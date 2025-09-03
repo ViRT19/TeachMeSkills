@@ -54,11 +54,14 @@ fun menu2() {
         num = readln().toInt()
     } while (num < 3)
     var prime: Boolean = true
+    var divider: String = ""
     for (i in 2..num - 1)
-        if (num % i == 0)
+        if (num % i == 0) {
             prime = false
+            divider += " $i"
+        }
     if (prime) println("Число $num простое.")
-    else println("Число $num не простое.")
+    else println("Число $num не простое. Делители:$divider.")
 }
 
 fun menu3() {
