@@ -39,15 +39,9 @@ fun menu1() {
     print("Число палиндром. Введите целое число: ")
     val str: String = readln().toString()
     var palindrom: Boolean = true
-    val count: Int = str.length
-    var c1: Char
-    var c2: Char
-    for (i in 1..count / 2) {
-        c1 = str.get(i - 1)
-        c2 = str.get(count - i)
-        if (c1 != c2) palindrom = false
-    }
-
+    for (i in 1..str.length / 2)
+        if (str.get(i - 1) != str.get(str.length - i))
+            palindrom = false
     val res: String = if (palindrom) "" else " не"
     println("Число $str$res палиндром.")
 }
