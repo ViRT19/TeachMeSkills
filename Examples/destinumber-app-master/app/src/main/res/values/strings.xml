@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Destinumber</string>
+    <string name="menu_header">Menu</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_history">History</string>
+    <string name="menu_logout">Logout</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="menu_guess">Destiny cards</string>
+    <string name="draw_card">Draw a card</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_server">Server-side error. Please, retry in few minutes</string>
+    <string name="error_client">Cannot make a prediction. Make sure to follow all the conditions</string>
+    <string name="profile_title">Profile</string>
+    <string name="profile_username">Username</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_first_name">First Name</string>
+    <string name="profile_last_name">Last Name</string>
+    <string name="profile_date_of_birth">Date of Birth</string>
+    <string name="profile_destiny_number">Destiny Number</string>
+    <string name="profile_prediction_attempts">Prediction Attempts left for today</string>
+    <string name="profile_save">Save</string>
+    <string name="profile_edit">Edit</string>
+    <string name="profile_cancel">Cancel</string>
+    <string name="profile_save_success">Profile updated successfully</string>
+    <string name="profile_save_error">Failed to update profile</string>
+    <string name="profile_loading">Loading...</string>
+    <string name="profile_clear">Clear</string>
+    <string name="profile_update_success">Profile updated successfully</string>
+    <string name="profile_update_fail">Failed to update profile</string>
+    <string name="profile_load_fail">Profile loading failed</string>
+    
+    <!-- Registration Screen -->
+    <string name="registration_title">Registration</string>
+    <string name="registration_username">Username</string>
+    <string name="registration_email">Email</string>
+    <string name="registration_password">Password</string>
+    <string name="registration_confirm_password">Confirm Password</string>
+    <string name="registration_first_name">First Name</string>
+    <string name="registration_last_name">Last Name</string>
+    <string name="registration_date_of_birth">Date of Birth</string>
+    <string name="registration_register">Register</string>
+    <string name="registration_already_have_account">Already have an account?</string>
+    <string name="registration_login">Login</string>
+    <string name="registration_success">Registration successful!</string>
+    <string name="registration_error">Registration failed</string>
+    <string name="registration_username_required">Username is required</string>
+    <string name="registration_password_required">Password is required</string>
+    <string name="registration_passwords_not_match">Passwords do not match</string>
+    <string name="registration_username_pattern_error">Username can only contain letters, numbers, and @/./+/-/_ characters</string>
+    <string name="registration_email_invalid">Invalid email format</string>
+    
+    <!-- Login Screen -->
+    <string name="login_username">Username / Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_button">Login</string>
+    <string name="login_error">Invalid username or password</string>
+    <string name="login_register_prompt">Don\'t have an account?</string>
+    <string name="login_register_link">Register</string>
+    
+    <!-- Registration Error Messages -->
+    <string name="registration_failed_generic">Registration failed</string>
+    <string name="registration_failed_with_reason">Registration failed: %1$s</string>
+    
+    <!-- Help Screen -->
+    <string name="menu_help">Help</string>
+    <string name="help_title">Help</string>
+    <string name="help_content">Welcome to Destinumber!\n\nThis app generates daily predictions using the leaked formulas of Robert Ofl, a US scientist from the 1960s who hypothesized that machines could predict the future based on patterns embedded in the universe\'s creation.\n\n## How it works:\n\nYour destiny number is calculated from your name, surname, and date of birth. Based on this number and the selected date, the app calculates 9 "cards" with your daily destiny written on the back.\n\n## Usage Rules:\n\n• 3 prediction attempts per day (reset at 03:00 UTC+3)\n• Predictions can be made up to 3 weeks in advance\n• One prediction per date (cannot be cancelled or deleted)\n\n## Getting Started:\n\n1. Create an account or log in\n2. Navigate to Destiny Cards\n3. Select a date and draw a card\n4. View your prediction history\n5. Update your profile information\n\nNote: This is a humorous app - all coincidences are random!</string>
+</resources>

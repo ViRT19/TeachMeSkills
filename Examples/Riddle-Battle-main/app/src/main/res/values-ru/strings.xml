@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Загадки (Битва команд)</string>
+    <string name="start">НАЧАТЬ</string>
+    <string name="question">Вопрос</string>
+    <string name="battle_of_the_team">Битва команд</string>
+    <string name="program_version">Версия программы: 1.0</string>
+    <string name="program_developer">Разработчик: Алексей Титов</string>
+    <string name="select_language">Выберите язык</string>
+    <string name="save">Сохранить</string>
+    <string name="russian">Русский</string>
+    <string name="english">Английский</string>
+    <string name="settings_saved">Настройки сохранены</string>
+    <string name="settings_not_saved">Настройки не сохранены</string>
+    <string name="language">Язык</string>
+    <string name="select_number_teams">Выберите количество команд</string>
+    <string name="play">Играть</string>
+    <string name="enter_command_name">Введите названия команд</string>
+    <string name="team">Команда</string>
+    <string name="fill_all_name_teams">Заполните все названия команд</string>
+    <string name="next">Далее</string>
+    <string name="yes">ДА</string>
+    <string name="no">НЕТ</string>
+    <string name="are_you_ready">Вы готовы?</string>
+    <string name="loading_riddle">Загрузка загадки</string>
+    <string name="the_teams_start">Начинает команда</string>
+    <string name="next_team">Следующая команда</string>
+    <string name="results">Результаты</string>
+    <string name="play_again">Играть снова</string>
+    <string name="correct">правильных</string>
+    <string name="teams_name_must_not_repeated">Названия команд не должны повторяться</string>
+    <string name="no_teams">Нет доступных команд</string>
+    <string name="loading_error">Ошибка загрузки:</string>
+    <string name="round_is_over">Ваш раунд окончен</string>
+    <string name="failed_load_riddles">Не удалось загрузить загадки после обновления</string>
+    <string name="error_getting_riddle">Ошибка при получении случайной загадки</string>
+</resources>
