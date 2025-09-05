@@ -23,6 +23,8 @@ fun main() {
         print(arr[i])
         print(" ")
     }
+    var maxNumOfArray: Int = 0
+    var maxIndexOfArray: Int = 0
 
 
 }
