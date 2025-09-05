@@ -11,6 +11,15 @@
            Напишите программу, которая проверяет, является ли массив чисел палиндромом.
  */
 
-fun main(){
-
+fun main() {
+    println("Поиск максимального и минимального элементов массива и их индексов.")
+    val countIndex: Int = (0..100).random()
+    val arr: Array<Int> = Array(countIndex, { 0 })
+    print("Массив из $countIndex элементов: ")
+    for (i in 0..countIndex - 2) {
+        arr[i] = (1..100000).random()
+        print("$arr[i], ")
+        arr[countIndex] = (1..100000).random()
+        println(arr[countIndex])
+    }
 }
