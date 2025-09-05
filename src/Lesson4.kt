@@ -18,7 +18,7 @@ fun Randomize(maxNum: Int):Int {
 fun main() {
     println("Поиск максимального и минимального элементов массива и их индексов.")
     val maxIndex = 30 //Максимальный индекс
-    val maxNum = 500  // Максимальное значение
+    val maxNum = 10  // Максимальное значение
     val countIndex: Int = Randomize(maxIndex)
     val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив
     print("Массив из $countIndex элементов: ")                   // Вывод массива
@@ -27,8 +27,14 @@ fun main() {
         print(arr[i])
         print(" ")
     }
-    var maxNumOfArray: Int = 0
+    println()
     var maxIndexOfArray: Int = 0
+    var minIndexOfArray: Int = 0
 
-
+    for (i in 0..countIndex-1){
+        if (arr[i] > arr[maxIndexOfArray]) maxIndexOfArray = i
+        if (arr[i] < arr[minIndexOfArray]) minIndexOfArray = i
+    }
+    println("Максимальное число = ${arr[maxIndexOfArray]} с индексом $maxIndexOfArray")
+    println("Минимальное число = ${arr[minIndexOfArray]} с индексом $minIndexOfArray")
 }
