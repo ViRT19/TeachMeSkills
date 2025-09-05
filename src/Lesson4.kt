@@ -13,7 +13,7 @@
 
 fun main() {
     val maxIndex = 5 //Максимальный индекс
-    val maxNum = 10  // Максимальное значение
+    val maxNum = 10  // Максимальное значение элемента массива
     val countIndex: Int = Randomize(maxIndex)           // Случайное значение количества элементов массива
     val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив типа Int, все нули
     print("Сгенерирован массив из $countIndex элементов:")
