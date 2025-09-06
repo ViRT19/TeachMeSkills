@@ -15,6 +15,21 @@
                    Выход: 2 (перестановки [4, 1] и [3, 2])
  */
 
+fun RandomNumber(maxNum: Int): Int {
+    return (Math.random() * maxNum).toInt() + 1
+}
+
 fun main(){
+    val maxIndex = 10 //Максимальный индекс
+    val maxNum = 10  // Максимальное значение элемента массива
+    val countIndex: Int = RandomNumber(maxIndex)                   // Случайное значение количества элементов массива
+    val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив типа Int, все нули
+    print("Сгенерирован массив из $countIndex элементов:")
+    for (i in 0..countIndex - 1) {                          // Заполнение массива случайными числами
+        arr[i] = RandomNumber(maxNum)
+        print(" ")
+        print(arr[i])
+    }
+    println(".")
 
 }
