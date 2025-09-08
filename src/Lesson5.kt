@@ -32,6 +32,7 @@ fun main() {
     }
     println(".")
 
+// Задание 1
     var newArr: Array<Int> = Array(countIndex, { 0 })   // Массив для результатов сортировки
     var cnt: Int = 0
     for (i in 0..countIndex - 1) {
@@ -46,7 +47,10 @@ fun main() {
             cnt++
         }
     }
-    print("Отсортированный массив из $countIndex элементов:")
+    print("Отсортированный по возрастанию массив из $countIndex элементов:")
     for (i in 0..countIndex - 1) print(" ${newArr[i]}")
     println(".")
+
+// Задание 2
+
 }
