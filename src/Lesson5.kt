@@ -19,17 +19,34 @@ fun RandomNumber(maxNum: Int): Int {
     return (Math.random() * maxNum).toInt() + 1
 }
 
-fun main(){
+fun main() {
     val maxIndex = 10 //Максимальный индекс
-    val maxNum = 10  // Максимальное значение элемента массива
-    val countIndex: Int = RandomNumber(maxIndex)                   // Случайное значение количества элементов массива
+    val maxNum = 20  // Максимальное значение элемента массива
+    val countIndex: Int = RandomNumber(maxIndex)        // Случайное значение количества элементов массива
     val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив типа Int, все нули
     print("Сгенерирован массив из $countIndex элементов:")
     for (i in 0..countIndex - 1) {                          // Заполнение массива случайными числами
-        arr[i] = RandomNumber(maxNum)
+        arr[i] = RandomNumber(maxNum) - maxNum / 2               //Добавляем отрицательные числа
         print(" ")
         print(arr[i])
     }
     println(".")
 
+    var newArr: Array<Int> = Array(countIndex, { 0 })   // Массив для результатов сортировки
+    var cnt: Int = 0
+    for (i in 0..countIndex - 1) {
+        if (arr[i] < 0) {
+            newArr[cnt] = arr[i]
+            cnt++
+        }
+    }
+    for (i in 0..countIndex - 1) {
+        if (arr[i] >= 0) {
+            newArr[cnt] = arr[i]
+            cnt++
+        }
+    }
+    print("Отсортированный массив из $countIndex элементов:")
+    for (i in 0..countIndex - 1) print(" ${newArr[i]}")
+    println(".")
 }
