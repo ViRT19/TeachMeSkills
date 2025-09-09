@@ -8,5 +8,6 @@
  */
 
 fun main () {
-
+    print("Введите строку, содержащую пробелы: ")
+    val str: String = readln()
 }
