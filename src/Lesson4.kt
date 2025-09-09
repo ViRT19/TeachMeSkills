@@ -46,7 +46,7 @@ fun main() {
     println(".")
 
     var palindrom: Boolean = true
-    for (i in 1..countIndex / 2)
+    for (i in 1..arr.size / 2)
         if (arr[i - 1] != arr[countIndex - i])
             palindrom = false
     if (palindrom) println("Массив является палиндромом.") else println("Массив не палиндром.")
