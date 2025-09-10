@@ -11,6 +11,7 @@ fun main() {
     val str = "до ре ми фа"
     var newStr = StringBuilder()
     println("Исходная строка: «$str».")
+
     var beginIndex: Int
     var endIndex: Int = str.length
 
@@ -28,6 +29,7 @@ fun main() {
     for (i in 0..str.length - 1)
         print(" ${str[i].code}")
     println(".")
+
     print("Обратно в ASCII код: ")
     for (i in 0..str.length - 1)
         print("${str[i].code.toChar()}")
