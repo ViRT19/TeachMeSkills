@@ -23,7 +23,20 @@ fun main() {
             endIndex = i
         }
     newStr.append(str.substring(0, endIndex))
-    println("Перевёрнутая строка: «${newStr.trim()}».")
+    println("1 способ. Перевёрнутая строка: «${newStr.trim()}».")
+    /*************************************************************************/
+    var newString = str.split(" ")
+    var out = StringBuilder()
+    for (i in newString.size - 1 downTo 0)
+        out.append(newString[i]).append(" ")
+    println("2 способ. Перевёрнутая строка: «$out».")
+    /*************************************************************************/
+    newString = newStr.reversed().split(" ")
+    print("3 способ. Переворачиваем обратно: «")
+    for (i in 0..newString.size - 1)
+        print(newString[i].reversed())
+    println("».")
+    /*************************************************************************/
 
     print("В ASCII коде:")
     for (i in 0..str.length - 1)
