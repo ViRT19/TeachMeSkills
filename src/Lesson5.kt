@@ -38,6 +38,16 @@ fun main() {
     println("».")
     /*************************************************************************/
 
+    val name = "Hello World, I am teach Kotlin"
+
+    val words = name.split(" ")
+    val reversedname = words.reversed().joinToString(" ")
+
+    println("Исходная строка: $name")
+    println("Перевернутые слова: $reversedname")
+
+    /*************************************************************************/
+
     print("В ASCII коде:")
     for (i in 0..str.length - 1)
         print(" ${str[i].code}")
