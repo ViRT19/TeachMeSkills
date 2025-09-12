@@ -11,18 +11,18 @@
            Напишите программу, которая проверяет, является ли массив чисел палиндромом.
  */
 
-fun RandomNum(maxNum: Int): Int {
+fun randomNum(maxNum: Int): Int {
     return (Math.random() * maxNum).toInt() + 1
 }
 
 fun main() {
     val maxIndex = 5 //Максимальный индекс
     val maxNum = 10  // Максимальное значение элемента массива
-    val countIndex: Int = RandomNum(maxIndex)           // Случайное значение количества элементов массива
+    val countIndex: Int = randomNum(maxIndex)           // Случайное значение количества элементов массива
     val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив типа Int, все нули
     print("Сгенерирован массив из $countIndex элементов:")
     for (i in 0..countIndex - 1) {                          // Заполнение массива случайными числами
-        arr[i] = RandomNum(maxNum)
+        arr[i] = randomNum(maxNum)
         print(" ")
         print(arr[i])
     }
