@@ -20,8 +20,8 @@ fun RandomNumber(maxNum: Int): Int {
 }
 
 fun main() {
-    val maxIndex = 10 //Максимальный индекс
-    val maxNum = 20  // Максимальное значение элемента массива
+    val maxIndex = 5 //Максимальный индекс
+    val maxNum = 5  // Максимальное значение элемента массива
     val countIndex: Int = RandomNumber(maxIndex)        // Случайное значение количества элементов массива
     val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив типа Int, все нули
     print("Сгенерирован массив из $countIndex элементов:")
@@ -57,7 +57,16 @@ fun main() {
     var res1: Array<Int> = Array(countIndex, { 0 })
     var res2: Array<Int> = Array(countIndex, { 0 })
     var r1: Int = 0
-    for (i in 0..arr.size - 1)  // Дублируем массив arr в res0
-        res0[i] = arr[i]
+    for (i in 0..arr.size - 1) {
+        for (j in 1..arr.size - 2) {
+            if (arr[i] == arr[j]) {
+                res1[r1] = arr[i]
+
+            }
+        }
+    }
+    for (i in 0..res1.size-1)
+        print("${res1[i]} ")
+
 
 }
