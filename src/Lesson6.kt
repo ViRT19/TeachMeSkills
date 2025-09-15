@@ -24,7 +24,7 @@ fun main() {
     val maxNum = 5  // Максимальное значение элемента массива
     val countIndex: Int = RandomNumber(maxIndex)        // Случайное значение количества элементов массива
     val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив типа Int, все нули
-    print("Сгенерирован массив из $countIndex элементов:")
+    print("Задание 1. Сгенерирован массив из $countIndex элементов:")
     for (i in 0..countIndex - 1) {                          // Заполнение массива случайными числами
         arr[i] = RandomNumber(maxNum) - maxNum / 2               //Добавляем отрицательные числа
         print(" ")
@@ -47,48 +47,53 @@ fun main() {
             cnt++
         }
     }
-    print("Отсортированный массив с сохранением порядка внутри групп из $countIndex элементов:")
+    print("Ответ: отсортированный массив с сохранением порядка внутри групп из $countIndex элементов:")
     for (i in 0..countIndex - 1) print(" ${newArr[i]}")
     println(".")
+
 
 // Задание 2
     var res0: Array<Int> = Array(countIndex, { 0 })
     arr.sort<Int>().also { res0 = arr }
-    print("Первая сортировка: ")
+    print("Задание 2, неоконченное. Первая сортировка: ")
     for (i in 0..res0.size - 1)
         print("${res0[i]} ")
     println()
 
-    /*    class frequencyArr() {
-            var fIndex: Int = 0
-            var fRepeat: Int = 0
-            var fMeaning: Int = 0
+
+// Задание 3
+    print("Задание 3. Сгенерирован массив из $countIndex элементов:")
+    for (i in 0..countIndex - 1) {                          // Заполнение массива случайными числами
+        arr[i] = RandomNumber(maxNum) - maxNum / 2               //Добавляем отрицательные числа
+        print(" ")
+        print(arr[i])
+    }
+    println(".")
+    var max: Int = 0
+    var maxI: Int = 0
+    var min: Int = 0
+    var minI: Int = 0
+    var res3: Array<Int> = Array(countIndex, { 0 })
+    var countIterations: Int = 0
+    for (i in 0..countIndex - 1) {
+        if (min > arr[i]) {
+            min = arr[i]
+            minI = i
         }
-        var fr = Array<frequencyArr> (countIndex)
-    */
-    var frIndex: Array<Int> = Array(countIndex, { 0 })
-    var frCount: Array<Int> = Array(countIndex, { 1 })
-    var frMeaning: Array<Int> = Array(countIndex, { 0 })
-    cnt = 0
-    for (i in 0..countIndex - 2) {
-        if (res0[i] == res0[i + 1]) {
-            if (res0[i] == frMeaning[cnt]) {
-                frCount[cnt]++
-                cnt++
-            } else {
-                frCount[cnt]++
-                frIndex[cnt] = i
-                frMeaning[cnt] = res0[i]
-                cnt++
-            }
+        if (max < arr[i]) {
+            max = arr[i]
+            maxI = i
         }
     }
-    for (i in 0..cnt - 1) {
-        print("${frIndex[i]} ")
-        println()
-        print("${frCount[i]} ")
-        println()
-        print("${frMeaning[i]} ")
-        println()
-    }
+    arr[minI] = arr[0]
+    arr[0] = min
+    arr[maxI] = arr[countIndex - 1]
+    arr[countIndex - 1] = max
+    countIterations++
+    res3[0] = min
+    res3[countIndex - 1] = max
+    println("Max = $max, Min = $min")
+
+    res3[0] = arr.min()
+    res3[countIndex - 1] = arr.max()
 }
