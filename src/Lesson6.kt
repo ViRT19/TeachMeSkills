@@ -20,7 +20,7 @@ fun RandomNumber(maxNum: Int): Int {
 }
 
 fun main() {
-    val maxIndex = 5 //Максимальный индекс
+    val maxIndex = 20 //Максимальный индекс
     val maxNum = 5  // Максимальное значение элемента массива
     val countIndex: Int = RandomNumber(maxIndex)        // Случайное значение количества элементов массива
     val arr: Array<Int> = Array(countIndex, { 0 })    // Инициализируем массив типа Int, все нули
@@ -52,21 +52,43 @@ fun main() {
     println(".")
 
 // Задание 2
-    cnt = 0
     var res0: Array<Int> = Array(countIndex, { 0 })
-    var res1: Array<Int> = Array(countIndex, { 0 })
-    var res2: Array<Int> = Array(countIndex, { 0 })
-    var r1: Int = 0
-    for (i in 0..arr.size - 1) {
-        for (j in 1..arr.size - 2) {
-            if (arr[i] == arr[j]) {
-                res1[r1] = arr[i]
+    arr.sort<Int>().also { res0 = arr }
+    print("Первая сортировка: ")
+    for (i in 0..res0.size - 1)
+        print("${res0[i]} ")
+    println()
 
+    /*    class frequencyArr() {
+            var fIndex: Int = 0
+            var fRepeat: Int = 0
+            var fMeaning: Int = 0
+        }
+        var fr = Array<frequencyArr> (countIndex)
+    */
+    var frIndex: Array<Int> = Array(countIndex, { 0 })
+    var frCount: Array<Int> = Array(countIndex, { 1 })
+    var frMeaning: Array<Int> = Array(countIndex, { 0 })
+    cnt = 0
+    for (i in 0..countIndex - 2) {
+        if (res0[i] == res0[i + 1]) {
+            if (res0[i] == frMeaning[cnt]) {
+                frCount[cnt]++
+                cnt++
+            } else {
+                frCount[cnt]++
+                frIndex[cnt] = i
+                frMeaning[cnt] = res0[i]
+                cnt++
             }
         }
     }
-    for (i in 0..res1.size-1)
-        print("${res1[i]} ")
-
-
+    for (i in 0..cnt - 1) {
+        print("${frIndex[i]} ")
+        println()
+        print("${frCount[i]} ")
+        println()
+        print("${frMeaning[i]} ")
+        println()
+    }
 }
