@@ -51,25 +51,5 @@ fun main() {
     for (i in 0..countIndex - 1) print(" ${newArr[i]}")
     println(".")
 
-// Задание 2
-    cnt = 0
-    var res0: Array<Int> = Array(countIndex, { 0 })
-    var res1: Array<Int> = Array(countIndex, { 0 })
-    var res2: Array<Int> = Array(countIndex, { 0 })
-    var r1: Int = 0
-    res0 = arr
-
-    var res0Count: Int = 0
-    for (i in 0..arr.size - 1) {
-        for (j in 1..arr.size - 2) {
-            if (arr[i] == arr[j]) {
-                res0[res0Count] = arr[j]
-                res0Count++
-                arr.drop(1)
-            }
-        }
-        for (i in 0..res0.size - 1)
-            print("${res0[i]} ")
-    }
 
 }
