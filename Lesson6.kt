@@ -47,9 +47,10 @@ fun main() {
             cnt++
         }
     }
-    print("Отсортированный массив с сохранением порядка внутри групп из $countIndex элементов:")
-    for (i in 0..countIndex - 1) print(" ${newArr[i]}")
+    print("Ответ: отсортированный массив с сохранением порядка внутри групп:")
+    newArr.forEach { print(" $it") }
     println(".")
+
 
 
 }
