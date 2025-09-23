@@ -47,17 +47,10 @@ fun main() {
             cnt++
         }
     }
-    print("Отсортированный массив с сохранением порядка внутри групп из $countIndex элементов:")
-    for (i in 0..countIndex - 1) print(" ${newArr[i]}")
+    print("Ответ: отсортированный массив с сохранением порядка внутри групп:")
+    newArr.forEach { print(" $it") }
     println(".")
 
-// Задание 2
-    cnt = 0
-    var res0: Array<Int> = Array(countIndex, { 0 })
-    var res1: Array<Int> = Array(countIndex, { 0 })
-    var res2: Array<Int> = Array(countIndex, { 0 })
-    var r1: Int = 0
-    for (i in 0..arr.size - 1)  // Дублируем массив arr в res0
-        res0[i] = arr[i]
+
 
 }
