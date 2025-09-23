@@ -29,13 +29,23 @@ fun main() {
     var out = StringBuilder()
     for (i in newString.size - 1 downTo 0)
         out.append(newString[i]).append(" ")
-    println("2 способ. Перевёрнутая строка: «$out».")
+    println("2 способ. Перевёрнутая строка: «${out.trim()}».")
     /*************************************************************************/
     newString = newStr.reversed().split(" ")
     print("3 способ. Переворачиваем обратно: «")
     for (i in 0..newString.size - 1)
         print(newString[i].reversed())
     println("».")
+    /*************************************************************************/
+
+    val name = "Hello World, I am teach Kotlin"
+
+    val words = name.split(" ")
+    val reversedname = words.reversed().joinToString(" ")
+
+    println("Исходная строка: $name")
+    println("Перевернутые слова: $reversedname")
+
     /*************************************************************************/
 
     print("В ASCII коде:")
