@@ -1,5 +1,6 @@
 package Lesson9_Duel
 
+
 /*
 Задача 1: Игра дуэль
           Напишите консольную игру, где игроки сражаются, по очереди бросая кубик.
@@ -14,7 +15,7 @@ package Lesson9_Duel
         • Лучник — очень сильная атака, мало здоровья, легкая броня
  */
 
-fun Random(maxNum: Int): Int {
+fun Rand(maxNum: Int): Int {
     return (Math.random() * maxNum).toInt() + 1
 }
 
@@ -23,13 +24,49 @@ fun main() {
     paladin.attack = 1
     paladin.health = 5
     paladin.protection = 5
+    paladin.name = "Паладин"
     var outlaw: Warrior = Warrior()    // Разбойник
     outlaw.attack = 5
     outlaw.health = 3
     outlaw.protection = 3
+    outlaw.name = "Разбойник"
     var archer: Warrior = Warrior()    // Лучник
-    archer.attack = 8
+    archer.attack = 5
     archer.health = 2
     archer.protection = 2
+    archer.name = "Лучник"
 
+    var key: Int = 0
+    do {
+        key = printStatus(paladin, outlaw, archer)
+        when (key) {
+            0 -> {
+                println("Игра завершена."); return
+            }
+            1 -> attack(paladin, archer)
+            2 -> attack(outlaw, archer)
+            else -> println("------------------Неверное значение. Еще раз.------------------------")
+        }
+        when (Rand(2)) {
+            1 -> {
+                attack(paladin, archer)
+                println("Паладин атаковал лучника.")
+            }
+
+            2 -> {
+                attack(paladin, outlaw)
+                println("Паладин атаковал разбойника.")
+            }
+        }
+        when (Rand(2)) {
+            1 -> {
+                attack(outlaw, archer)
+                println("Разбойник атаковал лучника.")
+            }
+            2 -> {
+                attack(outlaw, paladin)
+                println("Разбойник атаковал паладина.")
+            }
+        }
+    } while (key != 0)
 }
