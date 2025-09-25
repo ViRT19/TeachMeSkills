@@ -4,7 +4,6 @@ class Warrior {             // Воин
     var health: Int = 0     // Здоровье
     var protection: Int = 0 // Защита
     var attack: Int = 0     // Атака
-    var name: String = ""
 
     fun health(meaning: Int) {
         this.health -= meaning
@@ -43,4 +42,8 @@ fun attack(whom: Warrior, who: Warrior) {
     whom.health(who.attack)
     whom.protection(who.attack)
     who.attack--
+}
+
+fun Rand(maxNum: Int): Int {
+    return (Math.random() * maxNum).toInt() + 1
 }
