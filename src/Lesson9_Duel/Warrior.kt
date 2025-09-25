@@ -6,14 +6,17 @@ class Warrior {             // Воин
     var attack: Int = 0     // Атака
 
     fun health(meaning: Int) {
-        return health -= meaning
+        this.health -= meaning
+        return
     }
 
     fun protection(meaning: Int) {
-        return protection -= meaning
+        this.protection -= meaning
+        return
     }
 
     fun attack(meaning: Int) {
-        return attack -= meaning
+        this.attack -= meaning
+        return
     }
 }

@@ -19,15 +19,15 @@ fun Random(maxNum: Int): Int {
 }
 
 fun main() {
-    var paladin: Warrior    //  Паладин
+    var paladin: Warrior = Warrior()    //  Паладин
     paladin.attack = 1
     paladin.health = 5
     paladin.protection = 5
-    var outlaw: Warrior     // Разбойник
+    var outlaw: Warrior = Warrior()    // Разбойник
     outlaw.attack = 5
     outlaw.health = 3
     outlaw.protection = 3
-    var archer: Warrior     // Лучник
+    var archer: Warrior = Warrior()    // Лучник
     archer.attack = 8
     archer.health = 2
     archer.protection = 2
