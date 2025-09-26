@@ -1,16 +1,6 @@
-/*
-fun main() {
-    var arr: Array<Int> = arrayOf(1, 3, 5, 7, 5, 4, 23, 6)
-    print("Введите индекс массива:")
-    val a: Int = readln().toInt()
-    try {
-        print("Элемент массива: ${arr[a]}")
-    }
-    catch (overflowIndex: ArrayIndexOutOfBoundsException) {
-        println("Неверный индекс.")
-    }
-}
+import java.util.InputMismatchException
 
+/*
 Задача 1: Деление с обработкой исключения
 Задача: Написать программу, которая делит два числа, введенных пользователем.
 Обработать:
@@ -27,3 +17,34 @@ fun main() {
 ⦁ IllegalArgumentException, если строка пустая
 */
 
+fun Main() {
+    println("Обработка исключений. Задание 1: поимка деления на 0 или введение не числа.")
+    var a = 0
+    var b = 0
+    var errors = false
+    do {
+        errors = false
+        print("Первое число: ")
+        try {
+            a = readln().toInt()
+        } catch (e: InputMismatchException) {
+            errors = true
+            println("Введено не число.")
+        }
+    } while (!errors)
+    do {
+        errors = false
+        print("Второе число: ")
+        try {
+            try {
+                a = readln().toInt()
+            } catch (e: InputMismatchException) {
+                errors = true
+                println("Введено не число.")
+            }
+        } catch (e: ArithmeticException) {
+            errors = true
+            println("Делить на 0 нельзя. Повторите ввод числа.")
+        }
+    } while (!errors)
+}
