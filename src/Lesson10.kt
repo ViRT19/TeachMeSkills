@@ -67,11 +67,7 @@ fun main() {
 
     print("Ввод строки: ")
     errors = true
-    try {
-        val str: String = readln().toString()
-    } catch (e: IllegalArgumentException) {
-        errors = false
-        println("Строка пустая.")
-    }
-    if (true) println("Строка не пустая.")
+    val str: String = readln().toString()
+    if (str.isEmpty()) throw IllegalArgumentException("Строка пустая.")
+    else println(str)
 }
