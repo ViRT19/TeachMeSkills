@@ -1,6 +1,4 @@
 package Lesson9_Duel
-
-
 /*
 Задача 1: Игра дуэль
           Напишите консольную игру, где игроки сражаются, по очереди бросая кубик.
@@ -15,26 +13,19 @@ package Lesson9_Duel
         • Лучник — очень сильная атака, мало здоровья, легкая броня
  */
 
-fun Rand(maxNum: Int): Int {
-    return (Math.random() * maxNum).toInt() + 1
-}
-
 fun main() {
     var paladin: Warrior = Warrior()    //  Паладин
     paladin.attack = 1
     paladin.health = 5
     paladin.protection = 5
-    paladin.name = "Паладин"
     var outlaw: Warrior = Warrior()    // Разбойник
     outlaw.attack = 5
     outlaw.health = 3
     outlaw.protection = 3
-    outlaw.name = "Разбойник"
     var archer: Warrior = Warrior()    // Лучник
     archer.attack = 5
     archer.health = 2
     archer.protection = 2
-    archer.name = "Лучник"
 
     var key: Int = 0
     do {
@@ -45,7 +36,7 @@ fun main() {
             }
             1 -> attack(paladin, archer)
             2 -> attack(outlaw, archer)
-            else -> println("------------------Неверное значение. Еще раз.------------------------")
+            else -> println("-----------Введено неверное значение. Еще раз.--------------")
         }
         when (Rand(2)) {
             1 -> {
