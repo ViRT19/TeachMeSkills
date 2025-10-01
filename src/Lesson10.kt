@@ -17,34 +17,57 @@ import java.util.InputMismatchException
 ⦁ IllegalArgumentException, если строка пустая
 */
 
-fun Main() {
+class TooYoungException: Throwable()
+fun tooYoung (age: Int) {
+    if (age < 18) throw TooYoungException()
+}
+
+fun main() {
     println("Обработка исключений. Задание 1: поимка деления на 0 или введение не числа.")
     var a = 0
     var b = 0
-    var errors = false
+    var errors: Boolean = false
     do {
-        errors = false
         print("Первое число: ")
         try {
+            errors = false
             a = readln().toInt()
-        } catch (e: InputMismatchException) {
+        } catch (e: NumberFormatException) {
             errors = true
             println("Введено не число.")
         }
-    } while (!errors)
+    } while (errors)
     do {
-        errors = false
         print("Второе число: ")
         try {
-            try {
-                a = readln().toInt()
-            } catch (e: InputMismatchException) {
-                errors = true
-                println("Введено не число.")
-            }
-        } catch (e: ArithmeticException) {
+            errors = false
+            b = readln().toInt()
+        } catch (e: NumberFormatException) {
             errors = true
-            println("Делить на 0 нельзя. Повторите ввод числа.")
+            println("Введено не число.")
         }
-    } while (!errors)
+    } while (errors)
+    try {
+        val num: Int = a / b
+        println("Результат деления: $num.")
+    } catch (e: ArithmeticException) {
+        println("Ошибка: деление на 0.")
+    }
+
+    print("Введите возраст: ")
+    errors = true
+    try {
+        val yang: Int = readln().toInt()
+        tooYoung(yang)
+    } catch (e: TooYoungException) {
+        println("Слишком молодой.")
+        errors = false
+    }
+    if (errors) println("Подходящий возраст.")
+
+    print("Ввод строки: ")
+    errors = true
+    val str: String = readln().toString()
+    if (str.isEmpty()) throw IllegalArgumentException("Строка пустая.")
+    else println(str)
 }
