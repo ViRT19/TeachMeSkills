@@ -8,7 +8,7 @@ import java.util.LinkedList
  */
 fun main() {
     val ll: LinkedList<Int> = LinkedList(listOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
-    var iter: MutableIterator<Int> = ll.iterator()
+//    var iter: MutableIterator<Int> = ll.iterator()
     var i: Int = 0
     while (ll.size > 1) {
         for (i in 0..ll.size - 1)
@@ -16,6 +16,9 @@ fun main() {
                 ll.remove(ll[i])
                 println(ll.toString())
             }
-        ll.peekFirst()
     }
+
+    val ll1: LinkedList<Int> = LinkedList(listOf<Int>(1, 3, 5, 7, 9))
+    val ll2: LinkedList<Int> = LinkedList(listOf<Int>(0, 2, 4, 6, 8))
+
 }
