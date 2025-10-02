@@ -11,14 +11,11 @@ fun main() {
     var iter: MutableIterator<Int> = ll.iterator()
     var i: Int = 0
     while (ll.size > 1) {
-        try {
-            iter.next()
-            i++
-            if (i % 2 == 0)
-                iter.remove()
-            println(ll.toString())
-        } catch (e: NoSuchElementException) {
-            ll.peekFirst()
-        }
+        for (i in 0..ll.size - 1)
+            if (i % 2 == 0) {
+                ll.remove(ll[i])
+                println(ll.toString())
+            }
+        ll.peekFirst()
     }
 }
