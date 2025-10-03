@@ -26,9 +26,9 @@ fun main() {
                 println("Анаграммы: «${list[i]}» и «${list[j]}».")
 
     println("Задание 2. Найти первое повторяющееся число из списка чисел.")
-    val listNum = listOf<Int>(4, 6, 8, 6, 5, 3, 6, 7, 56, 5, 45, 5, 6, 6, 5, 41, 3, 2, 2, 24, 5, 6, 67, 7)
+    val listNum = listOf<Int>(4, 65, 8, 6, 5, 3, 54, 6, 7, 56, 5, 46, 5, 6, 6, 5, 34, 3, 2, 2, 42, 5, 6, 67, 7)
     for (i in 0..listNum.size - 1)
-        for (j in 1..listNum.size - 1)
+        for (j in i + 1..listNum.size - 1)
             if (listNum[i] == listNum[j]) {
                 println("Первое повторяющееся число = ${listNum[i]}")
                 return
