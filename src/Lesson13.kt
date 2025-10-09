@@ -1,5 +1,6 @@
-/*fun main() {
-    val lll = sequenceOf(1, 2, 3, 4, 5).map() {it*it}.toList()
+/*
+fun main() {
+    val lll = sequenceOf(1, 2, 3, 4, 5).map() {it * it}.toList()
     println(lll)
 }
 
@@ -23,13 +24,12 @@ data class Person(
 
 fun peopleAges() {
     val people = listOf(
-        Person("Анна", 25),
-        Person("Борис", 17),
-        Person("Виктор", 30),
-        Person("Галина", 22),
-        Person("Дмитрий", 16)
+        Person("Антон", 25),
+        Person("Андре", 17),
+        Person("Сидра", 30),
+        Person("Марья", 22),
+        Person("Франсуа", 16)
     )
-
     people
         .filter { it.age >= 18 }          // Фильтруем только совершеннолетних
         .sortedByDescending { it.age }    // Сортируем по возрасту в порядке убывания
@@ -51,10 +51,10 @@ fun main() {
     peopleAges()
 
     val result = (1..1000000)
-        .asSequence()          // преобразуем в последовательность для ленивой обработки
+        .asSequence()           // преобразуем в последовательность для ленивой обработки
         .filter { it % 2 == 0 } // фильтруем только четные числа
-        .map { it * it }       // возводим каждое число в квадрат
-        .sum()                // считаем сумму
+        .map { it * it }        // возводим каждое число в квадрат
+        .sum()                  // считаем сумму
 
     println("Сумма квадратов четных чисел: $result")
 }
