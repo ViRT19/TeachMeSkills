@@ -1,9 +1,4 @@
 /*
-fun main() {
-    val lll = sequenceOf(1, 2, 3, 4, 5).map() {it * it}.toList()
-    println(lll)
-}
-
 Задача 1: Напишите функцию, которая принимает список целых чисел и возвращает их сумму.
           Используйте лямбду в качестве параметра для определения операции. (Reduce).
 Задача 2: Напишите программу, которая получает список людей, фильтрует только тех,
@@ -11,7 +6,11 @@ fun main() {
           и выводит на экран с помощью apply и let. (sortedByDescending).
 Задача 3: Создайте список чисел от 1 до 1,000,000, отфильтруйте четные числа, затем возведите их в квадрат
           и посчитайте сумму всех этих чисел. Сделайте это с использованием asSequence для ленивой обработки.
- */
+fun main() {
+    val lll = sequenceOf(1, 2, 3, 4, 5).map() {it * it}.toList()
+    println(lll)
+}
+*/
 
 fun sumWithLambda(numbers: List<Int>, operation: (Int, Int) -> Int): Int {
     return numbers.reduce(operation)
@@ -28,7 +27,7 @@ fun peopleAges() {
         Person("Андре", 17),
         Person("Сидра", 30),
         Person("Марья", 22),
-        Person("Франсуа", 16)
+        Person("Франсуа", 15)
     )
     people
         .filter { it.age >= 18 }          // Фильтруем только совершеннолетних
