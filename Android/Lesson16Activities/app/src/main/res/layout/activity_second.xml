@@ -5,20 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SecondActivity">
 
     <TextView
         android:id="@+id/firstActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Activity"
+        android:background="#00009688"
+        android:text="Second Activity"
         android:textColor="@color/design_default_color_error"
-        android:textSize="34sp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/countOfSwitchesText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.215" />
 
     <TextView
         android:id="@+id/countOfSwitchesText"
@@ -28,13 +31,12 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/countOfSwitchesNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstActivity" />
 
     <TextView
         android:id="@+id/countOfSwitchesNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="0"
         android:textAlignment="center"
@@ -51,14 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#009688"
-        android:onClick="onClickToSecond"
-        android:text="Second Activity"
+        android:onClick="onClickToMain"
+        android:text="Main Activity"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countOfSwitchesText" />
+        app:layout_constraintTop_toBottomOf="@+id/countOfSwitchesNumber" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
