@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputBinding
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.activities.Object.countSwitchMyActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass: MainActivity
@@ -23,14 +25,14 @@ class MainActivity : AppCompatActivity() {
                     v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
                     insets
                 }
-//        val countOfSwitchMyMainActivity = intent.getIntExtra(Object.keyOfCount)
+        val tv: TextView = findViewById(R.id.countOfSwitchesNumber)
+        tv.text = Object.countSwitchMyActivity.toString()
     }
 
     fun onClickToSecond(view: View) {
         val intent = Intent(this, SecondActivity::class.java)
-        Object.countSwitchMyActivity ++
-        intent.putExtra(Object.keyOfCount, Object.countSwitchMyActivity)
         startActivity(intent)
+        Object.countSwitchMyActivity ++
     }
 
     override fun onStart() {

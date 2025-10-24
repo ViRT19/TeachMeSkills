@@ -8,7 +8,7 @@
     tools:context=".SecondActivity">
 
     <TextView
-        android:id="@+id/firstActivity"
+        android:id="@+id/second_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00009688"
@@ -32,7 +32,7 @@
         app:layout_constraintBottom_toTopOf="@+id/countOfSwitchesNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/second_activity" />
 
     <TextView
         android:id="@+id/countOfSwitchesNumber"

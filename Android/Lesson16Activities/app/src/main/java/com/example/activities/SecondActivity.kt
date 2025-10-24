@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,12 +21,13 @@ class SecondActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val tv: TextView = findViewById(R.id.countOfSwitchesNumber)
+        tv.text = Object.countSwitchMyActivity.toString()
     }
 
     fun onClickToMain (view: View) {
         val intent = Intent(this, MainActivity::class.java)
         Object.countSwitchMyActivity ++
-        intent.putExtra(Object.keyOfCount, Object.countSwitchMyActivity)
         startActivity(intent)
     }
 
