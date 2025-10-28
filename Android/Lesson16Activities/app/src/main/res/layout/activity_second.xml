@@ -42,18 +42,17 @@
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/switchToSecondActivity"
+        app:layout_constraintBottom_toTopOf="@+id/switchToMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countOfSwitchesText" />
 
     <Button
-        android:id="@+id/switchToSecondActivity"
+        android:id="@+id/switchToMainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FF000000"
-        android:textColor="@color/white"
+        android:backgroundTint="@color/violet"
         android:onClick="onClickToMain"
         android:text="Main Activity"
         android:textSize="30dp"
@@ -62,6 +61,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countOfSwitchesNumber" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/wing"
+        tools:layout_editor_absoluteY="12dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

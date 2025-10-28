@@ -2063,6 +2063,7 @@ int color switch_thumb_normal_material_dark 0x7f0502e4
 int color switch_thumb_normal_material_light 0x7f0502e5
 int color tooltip_background_dark 0x7f0502e6
 int color tooltip_background_light 0x7f0502e7
+int color violet 0x7f0502e9
 int color white 0x7f0502e8
 int dimen abc_action_bar_content_inset_material 0x7f060000
 int dimen abc_action_bar_content_inset_with_nav 0x7f060001
@@ -3048,6 +3049,7 @@ int drawable notify_panel_notification_icon_bg 0x7f0700e2
 int drawable test_level_drawable 0x7f0700e3
 int drawable tooltip_frame_dark 0x7f0700e4
 int drawable tooltip_frame_light 0x7f0700e5
+int drawable wing 0x7f0700e6
 int id ALT 0x7f080000
 int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
@@ -3268,6 +3270,7 @@ int id ifRoom 0x7f0800d8
 int id ignore 0x7f0800d9
 int id ignoreRequest 0x7f0800da
 int id image 0x7f0800db
+int id imageView 0x7f0801f4
 int id immediateStop 0x7f0800dc
 int id included 0x7f0800dd
 int id indeterminate 0x7f0800de
@@ -3478,6 +3481,7 @@ int id stretch 0x7f0801aa
 int id submenuarrow 0x7f0801ab
 int id submit_area 0x7f0801ac
 int id supportScrollUp 0x7f0801ad
+int id switchToMainActivity 0x7f0801f5
 int id switchToSecondActivity 0x7f0801ae
 int id tabMode 0x7f0801af
 int id tag_accessibility_actions 0x7f0801b0

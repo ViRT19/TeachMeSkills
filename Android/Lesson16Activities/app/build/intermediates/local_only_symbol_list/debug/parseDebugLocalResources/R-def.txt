@@ -1,14 +1,18 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color violet
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable wing
 id countOfSwitchesNumber
 id countOfSwitchesText
+id imageView
 id main
 id main_activity
 id second_activity
+id switchToMainActivity
 id switchToSecondActivity
 layout activity_main
 layout activity_second
