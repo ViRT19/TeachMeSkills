@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name" translatable="false">Activities</string>
-    <string name="main_activity">Main Activity</string>
-    <string name="second_activity">Second Activity</string>
-    <string name="count_switches">Count of Switches:</string>
-</resources>
