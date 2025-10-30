@@ -26,7 +26,7 @@ class SecondActivity : AppCompatActivity() {
         val btn = findViewById<Button>(R.id.btn)
         btn.setOnClickListener {
             val intent2 = Intent(this, MainActivity::class.java)
-            intent2.putExtra("txt", "Second")
+            intent2.putExtra("txt", getString(R.string.second_activity))
             startActivity(intent2)
         }
         val txt: TextView = findViewById<TextView>(R.id.tv)
