@@ -3,16 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlankFragment2">
+    tools:context=".BlankFragment3">
 
     <TextView
-        android:id="@+id/tvFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="100dp"
+        android:textSize="26dp"
         android:textStyle="bold"
-        android:text="DetailsFragment"
-        android:textSize="26dp" />
-
+        android:layout_margin="100dp"
+        android:text="SettingsFragment" />
 
 </FrameLayout>
