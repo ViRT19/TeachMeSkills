@@ -1,38 +1,23 @@
 package com.example.lesson19
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.example.lesson19.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
+    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.place_holder, BlankFragment.newInstance())
-            .commit()
-
-        val btn = findViewById<Button>(R.id.button)
-        btn.setOnClickListener {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.place_holder, BlankFragment2.newInstance())
-                .commit()
-            btn.text = "Третий фрагмент"
-
-            btn.setOnClickListener {
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.place_holder, BlankFragment3.newInstance())
-                    .commit()
-                btn.visibility = View.INVISIBLE
-            }
-        }
+        setContentView(binding.root)
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        MAIN = this
     }
 }

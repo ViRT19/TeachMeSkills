@@ -15,7 +15,7 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
-
+        viewBinding.enable = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -46,4 +46,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    val nav_version = "2.9.6"
+    // Jetpack Compose integration
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    // Views/Fragments integration
+    implementation("androidx.navigation:navigation-fragment:$nav_version")
+    implementation("androidx.navigation:navigation-ui:$nav_version")
+
 }
