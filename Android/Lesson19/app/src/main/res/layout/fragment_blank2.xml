@@ -9,5 +9,9 @@
         android:id="@+id/tvFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="100dp"
+        android:textStyle="bold"
+        android:text="DetailsFragment"
+        android:textSize="26dp" />
 
 </FrameLayout>
