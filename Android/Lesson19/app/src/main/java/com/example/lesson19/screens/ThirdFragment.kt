@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.lesson19.MAIN
+import com.example.lesson19.NAME
 import com.example.lesson19.R
 import com.example.lesson19.databinding.FragmentThirdBinding
 
@@ -21,6 +22,7 @@ class ThirdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.textView2.text = NAME
         binding.button3.setOnClickListener {
             MAIN.navController.navigate(R.id.action_thirdFragment_to_firstFragment)
         }
