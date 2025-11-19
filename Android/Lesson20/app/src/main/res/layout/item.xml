@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="8dp"
-        android:text="test"
+        android:text="Add Number"
+        android:textSize="18dp"
         android:textStyle="bold">
     </TextView>
 
