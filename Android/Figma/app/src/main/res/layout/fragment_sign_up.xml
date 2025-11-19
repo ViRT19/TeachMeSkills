@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:src="@drawable/emailFrame"
+        android:src="@drawable/email_frame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_10" />
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:src="@drawable/phoneFrame"
+        android:src="@drawable/phone_frame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailFrame" />
@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:src="@drawable/passwFrame"
+        android:src="@drawable/passw_frame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneFrame" />
@@ -162,17 +162,17 @@
             android:id="@+id/dont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don’t have an account?"
+            android:text="Have an account?"
             android:textColor="@color/brown"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="688dp" />
 
         <TextView
-            android:id="@+id/sign"
+            android:id="@+id/signLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Sign up"
+            android:text="Login"
             android:textColor="@color/brown"
             android:textStyle="bold" />
 
