@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id action_firstFragment_to_secondFragment
+id action_secondFragment_to_thirdFragment
+id action_thirdFragment_to_firstFragment
+id button1
+id button2
+id button3
+id editText
+id firstFragment
+id main
+id nav_graph
+id nav_host_fragment
+id secondFragment
+id textView
+id textView2
+id thirdFragment
+layout activity_main
+layout fragment_first
+layout fragment_second
+layout fragment_third
+mipmap ic_launcher
+mipmap ic_launcher_round
+navigation nav_graph
+string app_name
+string hello_blank_fragment
+style Base.Theme.Lesson19
+style Theme.Lesson19
+xml backup_rules
+xml data_extraction_rules
