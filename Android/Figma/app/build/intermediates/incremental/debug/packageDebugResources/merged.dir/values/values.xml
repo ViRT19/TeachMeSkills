@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="brown">#C3824E</color>
+    <color name="light_pink">#FEF6EF</color>
+    <color name="pink">#FCE2CE</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Figma</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="Base.Theme.Figma" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Figma" parent="Base.Theme.Figma"/>
+</resources>
