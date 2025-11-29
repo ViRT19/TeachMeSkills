@@ -9,19 +9,14 @@ import java.io.Serializable
 data class ShoppingListNames(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
-
     @ColumnInfo(name = "name")
     val name: String,
-
     @ColumnInfo(name = "time")
     val time: String,
-
     @ColumnInfo(name = "allItemCount")
     val allItemCounter: Int,
-
     @ColumnInfo(name = "checkItemsCount")
     val checkItemsCounter: Int,
-
     @ColumnInfo(name = "itemsIds")
     val itemIds: String,
 ) : Serializable
