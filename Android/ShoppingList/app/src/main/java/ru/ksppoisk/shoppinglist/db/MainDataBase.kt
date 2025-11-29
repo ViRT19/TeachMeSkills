@@ -11,6 +11,7 @@ import ru.ksppoisk.shoppinglist.entities.ShoppingListNames
 
 @Database(entities = [LibraryItem::class, NoteItem::class, ShoppingListItem::class, ShoppingListNames::class], version = 1)
 abstract class MainDataBase: RoomDatabase() {
+    abstract fun getDao(): Dao
     companion object {
         @Volatile
         private var INSTANCE: MainDataBase? = null
