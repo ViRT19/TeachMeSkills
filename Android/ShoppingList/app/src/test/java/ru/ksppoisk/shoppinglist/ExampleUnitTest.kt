@@ -1,4 +1,4 @@
-package com.example.shoppinglist
+package ru.ksppoisk.shoppinglist
 
 import org.junit.Test
 

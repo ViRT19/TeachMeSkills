@@ -1,4 +1,4 @@
-package com.example.shoppinglist
+package ru.ksppoisk.shoppinglist
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
