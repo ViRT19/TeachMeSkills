@@ -1,11 +1,13 @@
 package ru.ksppoisk.shoppinglist.activities
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
+import ru.ksppoisk.shoppinglist.R
+import ru.ksppoisk.shoppinglist.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -13,7 +15,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setBottomNavListener()
+    }
 
+    private fun setBottomNavListener() {
+        binding.bNav.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.settings -> {
+                    Log.d("MyLog", "Settings")
+                }
+                R.id.notes -> {
+                    Log.d("MyLog", "Notes")
+                }
+                R.id.shop_lst -> {
+                    Log.d("MyLog", "Shop List")
+                }
+                R.id.new_item -> {
+                    Log.d("MyLog", "New")
+                }
+            }
+            true
         }
     }
 }
