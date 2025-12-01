@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color green
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_new
+drawable ic_note
+drawable ic_note_background
+drawable ic_settings
+drawable ic_shop_list
+id bNav
+id main
+id new_item
+id notes
+id settings
+id shop_lst
+layout activity_main
+menu bottom_menu
+mipmap ic_launcher
+mipmap ic_launcher_round
+mipmap ic_note
+mipmap ic_note_foreground
+mipmap ic_note_round
+string app_name
+string new_item
+string notes
+string settings
+string shop_lst
+style Base.Theme.ShoppingList
+style Theme.ShoppingList
+xml backup_rules
+xml data_extraction_rules

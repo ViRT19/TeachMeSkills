@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="green">#FF10B14B</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Список покупок</string>
+    <string name="new_item">Новая запись</string>
+    <string name="notes">Блокнот</string>
+    <string name="settings">Настройки</string>
+    <string name="shop_lst">Список покупок</string>
+    <style name="Base.Theme.ShoppingList" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/green</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="Theme.ShoppingList" parent="Base.Theme.ShoppingList"/>
+</resources>
