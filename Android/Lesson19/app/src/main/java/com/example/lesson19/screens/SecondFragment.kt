@@ -16,13 +16,13 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSecondBinding.inflate(layoutInflater, container,false)
+        binding = FragmentSecondBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.editText.text = NAME
+        binding.editText.setText("")
         binding.button2.setOnClickListener {
             NAME = binding.editText.text.toString()
             MAIN.navController.navigate(R.id.action_secondFragment_to_thirdFragment)
