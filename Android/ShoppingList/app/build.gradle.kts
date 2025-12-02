@@ -45,6 +45,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.cardview)
     //start
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
