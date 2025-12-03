@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.databinding.ActivityMainBinding
+import ru.ksppoisk.shoppinglist.fragments.FragmentManager
+import ru.ksppoisk.shoppinglist.fragments.NoteFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -25,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                     Log.d("MyLog", "Settings")
                 }
                 R.id.notes -> {
-                    Log.d("MyLog", "Notes")
+                    FragmentManager.setFragment(NoteFragment.newInstance(), this)
                 }
                 R.id.shop_lst -> {
                     Log.d("MyLog", "Shop List")

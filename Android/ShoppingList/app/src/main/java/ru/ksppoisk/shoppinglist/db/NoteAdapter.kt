@@ -1,5 +1,4 @@
 package ru.ksppoisk.shoppinglist.db
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import ru.ksppoisk.shoppinglist.databinding.NoteListItemBinding
 import ru.ksppoisk.shoppinglist.entities.NoteItem
 
 
-class NoteAdapter: ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator()) {
+class NoteAdapter : ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -26,21 +25,7 @@ class NoteAdapter: ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator(
         holder.setData(getItem(position))
     }
 
-    class ItemHolder(view: View): RecyclerView.ViewHolder(view) {
-        private val binding = NoteListItemBinding.bind(view)
-        fun setData(note: NoteItem) = with(binding) {
-            tvTitle.text = note.title
-            tvDescription.text = note.content
-            tvTime.text = note.time
-        }
-        companion object {
-            fun create(parent: ViewGroup): ItemHolder {
-                return ItemHolder(LayoutInflater.from(parent.context).
-                inflate(R.layout.note_list_item, parent,false))
-            }
-        }
-    }
-    class ItemComporator: DiffUtil.ItemCallback<NoteItem>(){
+    class ItemComporator : DiffUtil.ItemCallback<NoteItem>() {
         override fun areItemsTheSame(
             oldItem: NoteItem,
             newItem: NoteItem
@@ -54,6 +39,23 @@ class NoteAdapter: ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator(
         ): Boolean {
             return oldItem == newItem
         }
+    }
 
+    class ItemHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val binding = NoteListItemBinding.bind(view)
+        fun setData(note: NoteItem) = with(binding) {
+            tvTitle.text = note.title
+            tvDescription.text = note.content
+            tvTime.text = note.time
+        }
+
+        companion object {
+            fun create(parent: ViewGroup): ItemHolder {
+                return ItemHolder(
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.note_list_item, parent, false)
+                )
+            }
+        }
     }
 }

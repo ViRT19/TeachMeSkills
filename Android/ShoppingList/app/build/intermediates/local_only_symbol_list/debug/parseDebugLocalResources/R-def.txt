@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 color black
 color green
+color red
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -11,12 +12,19 @@ drawable ic_note_background
 drawable ic_settings
 drawable ic_shop_list
 id bNav
+id linearLayout
 id main
 id new_item
 id notes
+id placeHolder
 id settings
 id shop_lst
+id tvDescription
+id tvTime
+id tvTitle
 layout activity_main
+layout fragment_note
+layout note_list_item
 menu bottom_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -24,6 +32,7 @@ mipmap ic_note
 mipmap ic_note_foreground
 mipmap ic_note_round
 string app_name
+string hello_blank_fragment
 string new_item
 string notes
 string settings

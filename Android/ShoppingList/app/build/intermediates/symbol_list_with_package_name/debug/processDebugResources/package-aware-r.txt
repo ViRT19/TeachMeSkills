@@ -2500,6 +2500,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -4035,6 +4036,7 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
 id listMode
 id list_item
 id m3_side_sheet
@@ -4155,6 +4157,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id placeHolder
 id position
 id postLayout
 id pressed
@@ -4293,6 +4296,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvDescription
+id tvTime
+id tvTitle
 id unchecked
 id uniform
 id unlabeled
@@ -4458,6 +4464,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout expand_button
+layout fragment_note
 layout image_frame
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
@@ -4514,6 +4521,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
+layout note_list_item
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -4618,6 +4626,7 @@ string expand_button_title
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

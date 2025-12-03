@@ -2,8 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="green">#FF10B14B</color>
+    <color name="red">#FF0000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Список покупок</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="new_item">Новая запись</string>
     <string name="notes">Блокнот</string>
     <string name="settings">Настройки</string>
