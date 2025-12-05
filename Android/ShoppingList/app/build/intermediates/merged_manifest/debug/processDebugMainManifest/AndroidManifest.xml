@@ -56,6 +56,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.ShoppingList" >
         <activity
+            android:name="ru.ksppoisk.shoppinglist.activities.NewNoteActivity"
+            android:exported="false" />
+        <activity
             android:name="ru.ksppoisk.shoppinglist.activities.MainActivity"
             android:exported="true" >
             <intent-filter>
@@ -63,8 +66,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        </activity> <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />

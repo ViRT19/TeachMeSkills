@@ -1,5 +1,6 @@
 package ru.ksppoisk.shoppinglist.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.activities.MainApp
+import ru.ksppoisk.shoppinglist.activities.NewNoteActivity
 import ru.ksppoisk.shoppinglist.databinding.FragmentNoteBinding
 import ru.ksppoisk.shoppinglist.db.MainViewModel
 
@@ -26,7 +28,7 @@ class NoteFragment : BaseFragment() {
     }
 
     override fun onClickNew() {
-
+        startActivity(Intent(activity, NewNoteActivity::class.java))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3695,6 +3695,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_new
 drawable ic_note
 drawable ic_note_background
+drawable ic_save
 drawable ic_search_black_24
 drawable ic_settings
 drawable ic_shop_list
@@ -3961,6 +3962,8 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id edDescription
+id edTitle
 id edge
 id edit_query
 id edit_text_id
@@ -4013,6 +4016,7 @@ id icon
 id icon_frame
 id icon_group
 id icon_only
+id id_save
 id ifRoom
 id ignore
 id ignoreRequest
@@ -4445,6 +4449,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_new_note
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -4549,6 +4554,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_menu
+menu new_note_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap ic_note
@@ -4620,13 +4626,13 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy
+string description_hint
 string error_a11y_label
 string error_icon_content_description
 string expand_button_title
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -4760,6 +4766,7 @@ string s4
 string s5
 string s6
 string s7
+string save
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -4770,6 +4777,7 @@ string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
+string title_hint
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat

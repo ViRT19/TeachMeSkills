@@ -5,12 +5,16 @@
     <color name="red">#FF0000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Список покупок</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_hint">Описание</string>
     <string name="new_item">Новая запись</string>
     <string name="notes">Блокнот</string>
+    <string name="save">Сохранить</string>
     <string name="settings">Настройки</string>
     <string name="shop_lst">Список покупок</string>
-    <style name="Base.Theme.ShoppingList" parent="Theme.Material3.DayNight.NoActionBar">
+    <string name="title_hint">Заголовок</string>
+    <style name="Base.Theme.ShoppingList" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        >
         
         <item name="colorPrimary">@color/green</item>
         <item name="android:windowFullscreen">true</item>

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.databinding:viewbinding:8.13.1] C:\Users\RT\.gradle\caches\8.13\transforms\b28f0a66a136bd81c1be6eb442bacadf\transformed\viewbinding-8.13.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\RT\.gradle\caches\8.13\transforms\3ea4b4205998aff9db05e9fccf8b89f6\transformed\material-1.13.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\RT\.gradle\caches\8.13\transforms\cb22d535a1f8d3085118eab6a044f825\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
@@ -87,14 +87,14 @@ MERGED from [com.android.billingclient:billing:4.0.0] C:\Users\RT\.gradle\caches
 	android:versionName
 		INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:4:5-51
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:3:5-63
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:6:5-29:19
-INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:6:5-29:19
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:5:5-30:19
+INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:5:5-30:19
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\RT\.gradle\caches\8.13\transforms\3ea4b4205998aff9db05e9fccf8b89f6\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.13.0] C:\Users\RT\.gradle\caches\8.13\transforms\3ea4b4205998aff9db05e9fccf8b89f6\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\RT\.gradle\caches\8.13\transforms\cb22d535a1f8d3085118eab6a044f825\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -138,45 +138,51 @@ MERGED from [com.android.billingclient:billing:4.0.0] C:\Users\RT\.gradle\caches
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.17.0] C:\Users\RT\.gradle\caches\8.13\transforms\8ac4ae6ed44c6f955612c50f5bdc73a9\transformed\core-1.17.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:11:9-41
 	android:fullBackupContent
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:10:9-54
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:9:9-54
 	android:roundIcon
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:7:9-35
 	android:theme
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:15:9-50
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:14:9-50
 	android:dataExtractionRules
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:9:9-65
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:8:9-65
 	android:name
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:7:9-43
-activity#ru.ksppoisk.shoppinglist.activities.MainActivity
-ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:16:9-24:20
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:6:9-43
+activity#ru.ksppoisk.shoppinglist.activities.NewNoteActivity
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:15:9-17:40
 	android:exported
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:18:13-36
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:17:13-37
 	android:name
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:17:13-52
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:16:13-55
+activity#ru.ksppoisk.shoppinglist.activities.MainActivity
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:18:9-26:20
+	android:exported
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:20:13-36
+	android:name
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:19:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:19:13-23:29
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:22:17-77
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:24:27-74
 meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:26:9-28:69
+ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:27:9-29:70
 	android:value
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:28:13-67
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:29:13-67
 	android:name
-		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:27:13-69
+		ADDED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml:28:13-69
 uses-sdk
 INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\RT\Dev\TeachMeSkills\Android\ShoppingList\app\src\main\AndroidManifest.xml

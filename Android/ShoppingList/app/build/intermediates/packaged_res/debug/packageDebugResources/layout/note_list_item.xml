@@ -52,7 +52,9 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="3dp"
                     android:background="#FD3434"
-                    android:orientation="horizontal"></LinearLayout>
+                    android:orientation="horizontal">
+
+                </LinearLayout>
             </LinearLayout>
 
             <TextView

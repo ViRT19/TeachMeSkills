@@ -16,7 +16,7 @@ class MainViewModel(database: MainDataBase) : ViewModel() {
     }
 
     class MainViewModelFactory(val database: MainDataBase) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
                 return MainViewModel(database) as T
