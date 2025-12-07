@@ -2,6 +2,7 @@ package ru.ksppoisk.shoppinglist.fragments
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,15 +12,19 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.activities.MainApp
 import ru.ksppoisk.shoppinglist.activities.NewNoteActivity
 import ru.ksppoisk.shoppinglist.databinding.FragmentNoteBinding
 import ru.ksppoisk.shoppinglist.db.MainViewModel
+import ru.ksppoisk.shoppinglist.db.NoteAdapter
+import ru.ksppoisk.shoppinglist.entities.NoteItem
 
-class NoteFragment : BaseFragment() {
+class NoteFragment : BaseFragment(), NoteAdapter.Listener {
     private lateinit var binding: FragmentNoteBinding
     private lateinit var editLauncher: ActivityResultLauncher<Intent>
+    private lateinit var adapter: NoteAdapter
     private val mainViewModel: MainViewModel by activityViewModels() {
         MainViewModel.MainViewModelFactory((context?.applicationContext as MainApp).database)
     }
@@ -41,19 +46,63 @@ class NoteFragment : BaseFragment() {
         onEditResult()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRcView()
+        observer()
+    }
+
+    private fun initRcView() = with(binding) {
+        rcViewNote.layoutManager = LinearLayoutManager(activity)
+        adapter = NoteAdapter(this@NoteFragment)
+        rcViewNote.adapter = adapter
+    }
+
+    private fun observer() {
+        mainViewModel.allNotes.observe(viewLifecycleOwner, {
+            adapter.submitList(it)
+        })
+    }
+
+    /*    private fun onEditResult() {
+            editLauncher = registerForActivityResult(
+                ActivityResultContracts.StartActivityForResult()) {
+                if (it.resultCode == Activity.RESULT_OK) {
+                    mainViewModel.insertNote(it.data?.getSerializableExtra(NEW_NOTE_KEY) as NoteItem)
+                }
+
+            }
+        }
+        val noteItem : NoteItem? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        intent.getSerializableExtra(NEW_NOTE_KEY, NoteItem::class.java)
+    } else {
+        @Suppress("DEPRECATION")
+        intent.getSerializableExtra(NEW_NOTE_KEY) as? NoteItem
+    }
+    */
     private fun onEditResult() {
         editLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()) {
+            ActivityResultContracts.StartActivityForResult()
+        ) {
             if (it.resultCode == Activity.RESULT_OK) {
-                Log.d("MyLog", "Title: ${it.data?.getStringExtra(TITLE_KEY)}")
-                Log.d("MyLog", "Description: ${it.data?.getStringExtra(DESC_KEY)}")
+                @Suppress("DEPRECATION")
+                val noteItem : NoteItem? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    it.data?.getSerializableExtra(NEW_NOTE_KEY, NoteItem::class.java)
+                } else {
+                    it.data?.getSerializableExtra(NEW_NOTE_KEY) as NoteItem
+                }
             }
 
         }
     }
+
+    override fun deleteItem(id: Int) {
+       mainViewModel.deleteNote(id)
+    }
+
     companion object {
-        const val TITLE_KEY = "title_key"
-        const val DESC_KEY = "desc_key"
+        const val NEW_NOTE_KEY = "new_note_key"
+
         @JvmStatic
         fun newInstance() = NoteFragment()
     }

@@ -21,6 +21,7 @@ id main
 id new_item
 id notes
 id placeHolder
+id rcViewNote
 id settings
 id shop_lst
 id tvDescription

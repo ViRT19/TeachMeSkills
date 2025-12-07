@@ -4027,6 +4027,7 @@ id indeterminate
 id info
 id invisible
 id inward
+id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
@@ -4162,6 +4163,7 @@ id peekHeight
 id percent
 id pin
 id placeHolder
+id pooling_container_listener_holder_tag
 id position
 id postLayout
 id pressed
@@ -4169,6 +4171,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id rcViewNote
 id rectangles
 id recycler_view
 id report_drawn

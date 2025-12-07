@@ -10,7 +10,7 @@ import ru.ksppoisk.shoppinglist.databinding.NoteListItemBinding
 import ru.ksppoisk.shoppinglist.entities.NoteItem
 
 
-class NoteAdapter : ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator()) {
+class NoteAdapter(private val listener: Listener) : ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,31 +22,28 @@ class NoteAdapter : ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator
         holder: ItemHolder,
         position: Int
     ) {
-        holder.setData(getItem(position))
+        holder.setData(getItem(position), listener)
     }
 
     class ItemComporator : DiffUtil.ItemCallback<NoteItem>() {
-        override fun areItemsTheSame(
-            oldItem: NoteItem,
-            newItem: NoteItem
-        ): Boolean {
+        override fun areItemsTheSame(oldItem: NoteItem, newItem: NoteItem): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(
-            oldItem: NoteItem,
-            newItem: NoteItem
-        ): Boolean {
+        override fun areContentsTheSame(oldItem: NoteItem, newItem: NoteItem): Boolean {
             return oldItem == newItem
         }
     }
 
     class ItemHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = NoteListItemBinding.bind(view)
-        fun setData(note: NoteItem) = with(binding) {
+        fun setData(note: NoteItem, listener: Listener) = with(binding) {
             tvTitle.text = note.title
             tvDescription.text = note.content
             tvTime.text = note.time
+            imDelete.setOnClickListener {
+                listener.deleteItem(note.id!!)
+            }
         }
 
         companion object {
@@ -57,5 +54,9 @@ class NoteAdapter : ListAdapter<NoteItem, NoteAdapter.ItemHolder>(ItemComporator
                 )
             }
         }
+    }
+
+    interface Listener {
+        fun deleteItem(id: Int)
     }
 }

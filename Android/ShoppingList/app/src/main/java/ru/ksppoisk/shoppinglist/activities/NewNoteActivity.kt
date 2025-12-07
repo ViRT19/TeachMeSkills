@@ -2,6 +2,7 @@ package ru.ksppoisk.shoppinglist.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -10,7 +11,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.databinding.ActivityNewNoteBinding
+import ru.ksppoisk.shoppinglist.entities.NoteItem
 import ru.ksppoisk.shoppinglist.fragments.NoteFragment
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class NewNoteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNewNoteBinding
@@ -36,11 +41,22 @@ class NewNoteActivity : AppCompatActivity() {
 
     private fun setMainResult() {
         val i = Intent().apply {
-            putExtra(NoteFragment.TITLE_KEY, binding.edTitle.text.toString())
-            putExtra(NoteFragment.DESC_KEY, binding.edDescription.text.toString())
+            putExtra(NoteFragment.NEW_NOTE_KEY, createNewNote())
         }
         setResult(RESULT_OK, i)
         finish()
+    }
+
+    private fun createNewNote(): NoteItem {
+        return NoteItem(null,
+            binding.edTitle.text.toString(),
+            binding.edDescription.text.toString(),
+            getCurrentTime(),
+            "")
+    }
+    private fun getCurrentTime(): String {
+        val formatter = SimpleDateFormat("dd.MM.YYYY - hh:mm:ss", Locale.getDefault())
+        return formatter.format(Calendar.getInstance().time)
     }
     private fun actionBarSettings() {
         val ab = supportActionBar
