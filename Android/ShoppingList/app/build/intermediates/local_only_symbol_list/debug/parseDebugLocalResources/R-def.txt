@@ -4,6 +4,7 @@ color black
 color green
 color red
 color white
+drawable ic_delete
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_new
@@ -16,6 +17,8 @@ id bNav
 id edDescription
 id edTitle
 id id_save
+id im_delete
+id inDelete
 id linearLayout
 id main
 id new_item

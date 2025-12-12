@@ -86,22 +86,37 @@ class NoteFragment : BaseFragment(), NoteAdapter.Listener {
         ) {
             if (it.resultCode == Activity.RESULT_OK) {
                 @Suppress("DEPRECATION")
-                val noteItem : NoteItem? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                    it.data?.getSerializableExtra(NEW_NOTE_KEY, NoteItem::class.java)
-                } else {
-                    it.data?.getSerializableExtra(NEW_NOTE_KEY) as NoteItem
-                }
+                val noteItem: NoteItem? =
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                        it.data?.getSerializableExtra(NEW_NOTE_KEY, NoteItem::class.java)
+                    } else {
+                        it.data?.getSerializableExtra(NEW_NOTE_KEY) as NoteItem
+                    }
+                val editState = it.data?.getStringExtra(EDIT_STAY_KEY)
+                if (noteItem != null)
+                    if (editState == "update")
+                        mainViewModel.updateNote(noteItem)
+                    else
+                        mainViewModel.insertNote(noteItem)
             }
 
         }
     }
 
     override fun deleteItem(id: Int) {
-       mainViewModel.deleteNote(id)
+        mainViewModel.deleteNote(id)
+    }
+
+    override fun onClickItem(note: NoteItem) {
+        val intent = Intent(activity, NewNoteActivity::class.java).apply {
+            putExtra(NEW_NOTE_KEY, note)
+        }
+        editLauncher.launch(intent)
     }
 
     companion object {
         const val NEW_NOTE_KEY = "new_note_key"
+        const val EDIT_STAY_KEY = "edit_stay_key"
 
         @JvmStatic
         fun newInstance() = NoteFragment()

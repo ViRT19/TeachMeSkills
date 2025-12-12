@@ -3679,6 +3679,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete
 drawable ic_expand_less_22px
 drawable ic_expand_more_22px
 drawable ic_keyboard_black_24dp
@@ -4020,8 +4021,10 @@ id id_save
 id ifRoom
 id ignore
 id ignoreRequest
+id im_delete
 id image
 id immediateStop
+id inDelete
 id included
 id indeterminate
 id info

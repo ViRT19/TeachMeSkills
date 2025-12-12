@@ -3,9 +3,11 @@ package ru.ksppoisk.shoppinglist.db;
 import android.database.Cursor;
 import androidx.annotation.NonNull;
 import androidx.room.CoroutinesRoom;
+import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -32,6 +34,10 @@ public final class Dao_Impl implements Dao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<NoteItem> __insertionAdapterOfNoteItem;
+
+  private final EntityDeletionOrUpdateAdapter<NoteItem> __updateAdapterOfNoteItem;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteNote;
 
   public Dao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
@@ -72,6 +78,56 @@ public final class Dao_Impl implements Dao {
         }
       }
     };
+    this.__updateAdapterOfNoteItem = new EntityDeletionOrUpdateAdapter<NoteItem>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "UPDATE OR ABORT `note_list` SET `id` = ?,`title` = ?,`content` = ?,`time` = ?,`category` = ? WHERE `id` = ?";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final NoteItem entity) {
+        if (entity.getId() == null) {
+          statement.bindNull(1);
+        } else {
+          statement.bindLong(1, entity.getId());
+        }
+        if (entity.getTitle() == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindString(2, entity.getTitle());
+        }
+        if (entity.getContent() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getContent());
+        }
+        if (entity.getTime() == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindString(4, entity.getTime());
+        }
+        if (entity.getCategory() == null) {
+          statement.bindNull(5);
+        } else {
+          statement.bindString(5, entity.getCategory());
+        }
+        if (entity.getId() == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindLong(6, entity.getId());
+        }
+      }
+    };
+    this.__preparedStmtOfDeleteNote = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "DELETE FROM note_list WHERE id IS ?";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -87,6 +143,49 @@ public final class Dao_Impl implements Dao {
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object updateNote(final NoteItem note, final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfNoteItem.handle(note);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object deleteNote(final int id, final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteNote.acquire();
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, id);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfDeleteNote.release(_stmt);
         }
       }
     }, $completion);

@@ -3,6 +3,7 @@ package ru.ksppoisk.shoppinglist.db
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 import ru.ksppoisk.shoppinglist.entities.NoteItem
 
@@ -14,4 +15,6 @@ interface Dao {
     suspend fun deleteNote(id: Int)
     @Insert
     suspend fun insertNote(note: NoteItem)
+    @Update
+    suspend fun updateNote(note: NoteItem)
 }
