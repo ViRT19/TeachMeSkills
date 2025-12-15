@@ -5,6 +5,7 @@
     <color name="red">#FF0000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Список покупок</string>
+    <string name="bold">Жирный</string>
     <string name="description_hint">Описание</string>
     <string name="new_item">Новая запись</string>
     <string name="notes">Блокнот</string>
