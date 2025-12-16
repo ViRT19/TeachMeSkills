@@ -82,7 +82,7 @@ class NewNoteActivity : AppCompatActivity() {
         }
         edDescription.text.setSpan(boldStyle, startPos, endPos, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         edDescription.text.trim()
-        edDescription.text.
+        edDescription.setSelection(startPos)
     }
 
     private fun setMainResult() {
