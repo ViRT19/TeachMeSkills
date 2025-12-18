@@ -23,6 +23,7 @@ anim btn_radio_to_off_mtrl_ring_outer_path_animation
 anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
+anim close_color_picker
 anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
@@ -43,6 +44,7 @@ anim m3_side_sheet_exit_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim open_color_picker
 animator chevron_checked_unchecked
 animator chevron_unchecked_checked
 animator design_appbar_state_list_animator
@@ -2491,6 +2493,12 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color picker_black
+color picker_blue
+color picker_green
+color picker_orange
+color picker_red
+color picker_yellow
 color preference_fallback_accent_color
 color primary_dark_material_dark
 color primary_dark_material_light
@@ -3925,6 +3933,7 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id colorPicker
 id compress
 id confirm_button
 id constraint
@@ -4030,10 +4039,17 @@ id icon_frame
 id icon_group
 id icon_only
 id id_bold
+id id_color
 id id_save
 id ifRoom
 id ignore
 id ignoreRequest
+id imBlack
+id imBlue
+id imGreen
+id imOrange
+id imRed
+id imYellow
 id im_delete
 id image
 id immediateStop
@@ -4627,6 +4643,7 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string color
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title

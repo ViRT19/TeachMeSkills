@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Shopping List</string>
     <string name="bold">Bold</string>
+    <string name="color">Color</string>
     <string name="description_hint">Description</string>
     <string name="new_item">New Item</string>
     <string name="notes">Notes</string>

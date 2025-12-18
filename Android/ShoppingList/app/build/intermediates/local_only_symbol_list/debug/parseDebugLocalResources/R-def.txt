@@ -1,7 +1,15 @@
 R_DEF: Internal format may change without notice
 local
+anim close_color_picker
+anim open_color_picker
 color black
 color green
+color picker_black
+color picker_blue
+color picker_green
+color picker_orange
+color picker_red
+color picker_yellow
 color red
 color white
 drawable ic_bold
@@ -26,10 +34,18 @@ drawable ic_text
 drawable ic_theme_style
 drawable ic_time_format
 id bNav
+id colorPicker
 id edDescription
 id edTitle
 id id_bold
+id id_color
 id id_save
+id imBlack
+id imBlue
+id imGreen
+id imOrange
+id imRed
+id imYellow
 id im_delete
 id inDelete
 id linearLayout
@@ -56,6 +72,7 @@ mipmap ic_note_foreground
 mipmap ic_note_round
 string app_name
 string bold
+string color
 string description_hint
 string new_item
 string notes
