@@ -1,5 +1,6 @@
 package ru.ksppoisk.shoppinglist.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Build
@@ -24,6 +25,7 @@ import ru.ksppoisk.shoppinglist.databinding.ActivityNewNoteBinding
 import ru.ksppoisk.shoppinglist.entities.NoteItem
 import ru.ksppoisk.shoppinglist.fragments.NoteFragment
 import ru.ksppoisk.shoppinglist.utils.HtmlManager
+import ru.ksppoisk.shoppinglist.utils.MyTouchListener
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -38,6 +40,12 @@ class NewNoteActivity : AppCompatActivity() {
         setContentView(binding.root)
         actionBarSettings()
         getNote()
+        init()
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun init() {
+        binding.colorPicker.setOnTouchListener(MyTouchListener())
     }
 
     private fun getNote() {
