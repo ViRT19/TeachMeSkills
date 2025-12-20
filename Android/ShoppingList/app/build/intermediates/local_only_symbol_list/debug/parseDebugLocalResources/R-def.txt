@@ -3,6 +3,7 @@ local
 anim close_color_picker
 anim open_color_picker
 color black
+color dark_gray
 color green
 color picker_black
 color picker_blue
