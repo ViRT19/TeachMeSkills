@@ -3892,6 +3892,7 @@ int id autoHide 0x7f08005b
 int id autoLimit 0x7f08005c
 int id availableSpace 0x7f08005d
 int id axisRelative 0x7f08005e
+int id bCreate 0x7f080238
 int id bNav 0x7f08005f
 int id barrier 0x7f080060
 int id baseline 0x7f080061
@@ -3985,6 +3986,7 @@ int id easeInOut 0x7f0800b8
 int id easeOut 0x7f0800b9
 int id east 0x7f0800ba
 int id edDescription 0x7f0800bb
+int id edNewListName 0x7f080239
 int id edTitle 0x7f0800bc
 int id edge 0x7f0800bd
 int id edit_query 0x7f0800be
@@ -4306,6 +4308,7 @@ int id textSpacerNoButtons 0x7f0801f9
 int id textSpacerNoTitle 0x7f0801fa
 int id textStart 0x7f0801fb
 int id textTop 0x7f0801fc
+int id textView 0x7f08023a
 int id text_input_end_icon 0x7f0801fd
 int id text_input_error_icon 0x7f0801fe
 int id text_input_start_icon 0x7f0801ff
@@ -4561,6 +4564,7 @@ int layout mtrl_picker_text_input_date 0x7f0b0066
 int layout mtrl_picker_text_input_date_range 0x7f0b0067
 int layout mtrl_search_bar 0x7f0b0068
 int layout mtrl_search_view 0x7f0b0069
+int layout new_list_dialog 0x7f0b0085
 int layout note_list_item 0x7f0b006a
 int layout notification_action 0x7f0b006b
 int layout notification_action_tombstone 0x7f0b006c
@@ -4673,6 +4677,7 @@ int string fab_transformation_sheet_behavior 0x7f100049
 int string hide_bottom_view_on_scroll_behavior 0x7f10004a
 int string icon_content_description 0x7f10004b
 int string item_view_role_description 0x7f10004c
+int string list_name 0x7f1000dd
 int string m3_exceed_max_badge_text_suffix 0x7f10004d
 int string m3_loading_indicator_content_description 0x7f10004e
 int string m3_ref_typeface_brand_medium 0x7f10004f
@@ -4781,6 +4786,7 @@ int string mtrl_timepicker_confirm 0x7f1000b5
 int string nav_rail_collapsed_a11y_label 0x7f1000b6
 int string nav_rail_expanded_a11y_label 0x7f1000b7
 int string new_item 0x7f1000b8
+int string new_list 0x7f1000de
 int string not_set 0x7f1000b9
 int string notes 0x7f1000ba
 int string offline_notification_text 0x7f1000bb

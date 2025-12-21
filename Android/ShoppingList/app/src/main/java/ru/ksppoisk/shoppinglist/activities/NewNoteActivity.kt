@@ -11,6 +11,7 @@ import android.text.Spannable
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.util.Log
+import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -44,6 +45,7 @@ class NewNoteActivity : AppCompatActivity() {
         getNote()
         onClickColorPicker()
         init()
+//      actionMenuCallBack() // Запуск удаления actionMenu при выделении
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -192,4 +194,37 @@ class NewNoteActivity : AppCompatActivity() {
         })
         binding.colorPicker.startAnimation(openAnim)
     }
+
+    private fun actionMenuCallBack() { // Прячет actionMenu (copy/paste) //
+        val actionCallBack = object : ActionMode.Callback {
+            override fun onActionItemClicked(
+                mode: ActionMode?,
+                item: MenuItem?
+            ): Boolean {
+                return true
+            }
+
+            override fun onCreateActionMode(
+                mode: ActionMode?,
+                menu: Menu?
+            ): Boolean {
+                menu?.clear()
+                return true
+            }
+
+            override fun onDestroyActionMode(mode: ActionMode?) {
+
+            }
+
+            override fun onPrepareActionMode(
+                mode: ActionMode?,
+                menu: Menu?
+            ): Boolean {
+                menu?.clear()
+                return true
+            }
+        }
+        binding.edDescription.customSelectionActionModeCallback = actionCallBack
+    }
+
 }

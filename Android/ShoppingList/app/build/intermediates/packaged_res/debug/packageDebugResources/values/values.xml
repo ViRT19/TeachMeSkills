@@ -15,7 +15,9 @@
     <string name="bold">Жирный</string>
     <string name="color">Цвет</string>
     <string name="description_hint">Описание</string>
+    <string name="list_name">Название списка</string>
     <string name="new_item">Новая запись</string>
+    <string name="new_list">Новое название списка</string>
     <string name="notes">Блокнот</string>
     <string name="save">Сохранить</string>
     <string name="settings">Настройки</string>
