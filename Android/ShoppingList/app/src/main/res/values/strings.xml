@@ -9,6 +9,7 @@
     <string name="color">Цвет</string>
     <string name="title_hint">Заголовок</string>
     <string name="description_hint">Описание</string>
-    <string name="new_list">Новое название списка</string>
+    <string name="new_list">Создать список</string>
     <string name="list_name">Название списка</string>
+
 </resources>

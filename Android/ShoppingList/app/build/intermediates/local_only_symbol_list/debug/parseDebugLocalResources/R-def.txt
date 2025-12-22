@@ -66,6 +66,7 @@ id tvTitle
 layout activity_main
 layout activity_new_note
 layout fragment_note
+layout fragment_shop_list_names
 layout new_list_dialog
 layout note_list_item
 menu bottom_menu

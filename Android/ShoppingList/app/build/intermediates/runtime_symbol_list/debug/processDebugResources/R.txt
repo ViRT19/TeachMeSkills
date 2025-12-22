@@ -4508,6 +4508,7 @@ int layout design_text_input_end_icon 0x7f0b002e
 int layout design_text_input_start_icon 0x7f0b002f
 int layout expand_button 0x7f0b0030
 int layout fragment_note 0x7f0b0031
+int layout fragment_shop_list_names 0x7f0b0086
 int layout image_frame 0x7f0b0032
 int layout ime_base_split_test_activity 0x7f0b0033
 int layout ime_secondary_split_test_activity 0x7f0b0034

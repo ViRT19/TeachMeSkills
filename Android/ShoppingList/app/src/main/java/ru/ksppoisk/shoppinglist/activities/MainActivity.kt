@@ -11,6 +11,7 @@ import ru.ksppoisk.shoppinglist.databinding.ActivityMainBinding
 import ru.ksppoisk.shoppinglist.dialogs.NewListDialog
 import ru.ksppoisk.shoppinglist.fragments.FragmentManager
 import ru.ksppoisk.shoppinglist.fragments.NoteFragment
+import ru.ksppoisk.shoppinglist.fragments.ShopListNamesFragment
 
 class MainActivity : AppCompatActivity(), NewListDialog.Listener {
     lateinit var binding: ActivityMainBinding
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        FragmentManager.setFragment(ShopListNamesFragment.newInstance(), this)
         setBottomNavListener()
     }
 
@@ -27,15 +29,17 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
                 R.id.settings -> {
                     Log.d("MyLog", "Settings")
                 }
+
                 R.id.notes -> {
                     FragmentManager.setFragment(NoteFragment.newInstance(), this)
                 }
+
                 R.id.shop_lst -> {
-                    Log.d("MyLog", "Shop List")
+                    FragmentManager.setFragment(ShopListNamesFragment.newInstance(), this)
                 }
+
                 R.id.new_item -> {
-                //    FragmentManager.currentFrag?.onClickNew()
-                    NewListDialog.showDialog(this, this)
+                    FragmentManager.currentFrag?.onClickNew()
                 }
             }
             true

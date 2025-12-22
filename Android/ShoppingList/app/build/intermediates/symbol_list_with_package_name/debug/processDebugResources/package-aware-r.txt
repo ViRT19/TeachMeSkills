@@ -4509,6 +4509,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout expand_button
 layout fragment_note
+layout fragment_shop_list_names
 layout image_frame
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
