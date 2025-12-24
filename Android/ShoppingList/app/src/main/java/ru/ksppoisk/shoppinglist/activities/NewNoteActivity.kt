@@ -1,29 +1,28 @@
 package ru.ksppoisk.shoppinglist.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.text.Editable
 import android.text.Spannable
+import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
-import android.util.Log
+import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import androidx.activity.enableEdgeToEdge
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.ContextCompat
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.databinding.ActivityNewNoteBinding
 import ru.ksppoisk.shoppinglist.entities.NoteItem
 import ru.ksppoisk.shoppinglist.fragments.NoteFragment
 import ru.ksppoisk.shoppinglist.utils.HtmlManager
+import ru.ksppoisk.shoppinglist.utils.MyTouchListener
+import ru.ksppoisk.shoppinglist.utils.TimeManager
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -38,6 +37,23 @@ class NewNoteActivity : AppCompatActivity() {
         setContentView(binding.root)
         actionBarSettings()
         getNote()
+        onClickColorPicker()
+        init()
+//      actionMenuCallBack() // Запуск удаления actionMenu при выделении
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun init() {
+        binding.colorPicker.setOnTouchListener(MyTouchListener())
+    }
+
+    private fun onClickColorPicker() = with(binding) {
+        imRed.setOnClickListener { setColorForSelectedText(R.color.picker_red) }
+        imGreen.setOnClickListener { setColorForSelectedText(R.color.picker_green) }
+        imOrange.setOnClickListener { setColorForSelectedText(R.color.picker_orange) }
+        imYellow.setOnClickListener { setColorForSelectedText(R.color.picker_yellow) }
+        imBlue.setOnClickListener { setColorForSelectedText(R.color.picker_blue) }
+        imBlack.setOnClickListener { setColorForSelectedText(R.color.picker_black) }
     }
 
     private fun getNote() {
@@ -93,6 +109,17 @@ class NewNoteActivity : AppCompatActivity() {
         edDescription.text.trim()
         edDescription.setSelection(startPos)
     }
+    private fun setColorForSelectedText(colorId: Int) = with(binding) {
+        val startPos = edDescription.selectionStart
+        val endPos = edDescription.selectionEnd
+        val styles = edDescription.text.getSpans(startPos, endPos, ForegroundColorSpan::class.java)
+        if (styles.isNotEmpty()) edDescription.text.removeSpan(styles[0])
+        edDescription.text.setSpan(ForegroundColorSpan(
+            ContextCompat.getColor(this@NewNoteActivity, colorId)),
+            startPos, endPos, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        edDescription.text.trim()
+        edDescription.setSelection(startPos)
+    }
 
     private fun setMainResult() {
         var editState = "new"
@@ -122,16 +149,15 @@ class NewNoteActivity : AppCompatActivity() {
             null,
             binding.edTitle.text.toString(),
             HtmlManager.toHtml(binding.edDescription.text),
-            getCurrentTime(),
+            TimeManager.getCurrentTime(),
             ""
         )
     }
 
-    private fun getCurrentTime(): String {
+/*    private fun getCurrentTime(): String {
         val formatter = SimpleDateFormat("dd.MM.YYYY - hh:mm:ss", Locale.getDefault())
         return formatter.format(Calendar.getInstance().time)
-    }
-
+    }*/
     private fun actionBarSettings() {
         val ab = supportActionBar
         ab?.setDisplayHomeAsUpEnabled(true)
@@ -161,4 +187,37 @@ class NewNoteActivity : AppCompatActivity() {
         })
         binding.colorPicker.startAnimation(openAnim)
     }
+
+    private fun actionMenuCallBack() { // Прячет actionMenu (copy/paste) //
+        val actionCallBack = object : ActionMode.Callback {
+            override fun onActionItemClicked(
+                mode: ActionMode?,
+                item: MenuItem?
+            ): Boolean {
+                return true
+            }
+
+            override fun onCreateActionMode(
+                mode: ActionMode?,
+                menu: Menu?
+            ): Boolean {
+                menu?.clear()
+                return true
+            }
+
+            override fun onDestroyActionMode(mode: ActionMode?) {
+
+            }
+
+            override fun onPrepareActionMode(
+                mode: ActionMode?,
+                menu: Menu?
+            ): Boolean {
+                menu?.clear()
+                return true
+            }
+        }
+        binding.edDescription.customSelectionActionModeCallback = actionCallBack
+    }
+
 }

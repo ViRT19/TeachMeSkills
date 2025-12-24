@@ -64,22 +64,6 @@ class NoteFragment : BaseFragment(), NoteAdapter.Listener {
         })
     }
 
-    /*    private fun onEditResult() {
-            editLauncher = registerForActivityResult(
-                ActivityResultContracts.StartActivityForResult()) {
-                if (it.resultCode == Activity.RESULT_OK) {
-                    mainViewModel.insertNote(it.data?.getSerializableExtra(NEW_NOTE_KEY) as NoteItem)
-                }
-
-            }
-        }
-        val noteItem : NoteItem? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        intent.getSerializableExtra(NEW_NOTE_KEY, NoteItem::class.java)
-    } else {
-        @Suppress("DEPRECATION")
-        intent.getSerializableExtra(NEW_NOTE_KEY) as? NoteItem
-    }
-    */
     private fun onEditResult() {
         editLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()

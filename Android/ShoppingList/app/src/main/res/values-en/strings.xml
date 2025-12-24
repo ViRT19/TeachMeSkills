@@ -10,4 +10,6 @@
     <string name="color">Color</string>
     <string name="title_hint">Title</string>
     <string name="description_hint">Description</string>
+    <string name="new_list">Create List</string>
+    <string name="list_name">List Name</string>
 </resources>
