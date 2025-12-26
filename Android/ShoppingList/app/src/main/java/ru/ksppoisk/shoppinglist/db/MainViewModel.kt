@@ -7,7 +7,6 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.ksppoisk.shoppinglist.entities.NoteItem
-import ru.ksppoisk.shoppinglist.entities.ShoppingListItem
 import ru.ksppoisk.shoppinglist.entities.ShoppingListName
 
 class MainViewModel(database: MainDataBase) : ViewModel() {

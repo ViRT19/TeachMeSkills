@@ -1667,6 +1667,7 @@ color foreground_material_light
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color light_gray
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3916,6 +3917,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id cardView
 id carryVelocity
 id center
 id centerCrop
@@ -4049,6 +4051,8 @@ id ignore
 id ignoreRequest
 id imBlack
 id imBlue
+id imDelete
+id imEdit
 id imGreen
 id imOrange
 id imRed
@@ -4185,6 +4189,7 @@ id open_search_view_toolbar_container
 id outline
 id outward
 id overshoot
+id pBar
 id packed
 id parallax
 id parent
@@ -4206,6 +4211,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id rcView
 id rcViewNote
 id rectangles
 id recycler_view
@@ -4339,7 +4345,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvCounter
 id tvDescription
+id tvEmpty
+id tvListName
 id tvTime
 id tvTitle
 id unchecked
@@ -4513,6 +4522,7 @@ layout fragment_shop_list_names
 layout image_frame
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout list_name_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4670,6 +4680,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string copy
 string description_hint
+string empty_list
 string error_a11y_label
 string error_icon_content_description
 string expand_button_title

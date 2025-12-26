@@ -11,5 +11,6 @@
     <string name="description_hint">Описание</string>
     <string name="new_list">Создать список</string>
     <string name="list_name">Название списка</string>
+    <string name="empty_list">Список пуст</string>
 
 </resources>

@@ -1,23 +1,25 @@
 package ru.ksppoisk.shoppinglist.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import ru.ksppoisk.shoppinglist.activities.MainApp
 import ru.ksppoisk.shoppinglist.databinding.FragmentShopListNamesBinding
 import ru.ksppoisk.shoppinglist.db.MainViewModel
+import ru.ksppoisk.shoppinglist.db.ShopListNameAdapter
 import ru.ksppoisk.shoppinglist.dialogs.NewListDialog
 import ru.ksppoisk.shoppinglist.entities.ShoppingListName
 import ru.ksppoisk.shoppinglist.utils.TimeManager
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Locale
 
 class ShopListNamesFragment : BaseFragment() {
     private lateinit var binding: FragmentShopListNamesBinding
+    private lateinit var adapter: ShopListNameAdapter
+
     private val mainViewModel: MainViewModel by activityViewModels() {
         MainViewModel.MainViewModelFactory((context?.applicationContext as MainApp).database)
     }
@@ -34,22 +36,15 @@ class ShopListNamesFragment : BaseFragment() {
         NewListDialog.showDialog(activity as AppCompatActivity, object : NewListDialog.Listener {
             override fun onClick(name: String) {
                 val shopListName = ShoppingListName(
-                    null, name,
+                    null,
+                    name,
                     TimeManager.getCurrentTime(),
-                    0,
-                    0,
-                    ""
+                    0,0,""
                 )
                 mainViewModel.insertShopListName(shopListName)
             }
-
         })
     }
-
-/*    private fun getCurrentTime(): String {
-        val formatter = SimpleDateFormat("dd.MM.YYYY - hh:mm:ss", Locale.getDefault())
-        return formatter.format(Calendar.getInstance().time)
-    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,11 +57,14 @@ class ShopListNamesFragment : BaseFragment() {
     }
 
     private fun initRcView() = with(binding) {
-
+        rcView.layoutManager = LinearLayoutManager(activity)
+        adapter = ShopListNameAdapter()
+        rcView.adapter = adapter
     }
 
     private fun observer() {
         mainViewModel.allShopListNames.observe(viewLifecycleOwner, {
+            adapter.submitList(it)
         })
     }
 

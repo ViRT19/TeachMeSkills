@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="dark_gray">#575757</color>
     <color name="green">#FF10B14B</color>
+    <color name="light_gray">#CCCCCCCC</color>
     <color name="picker_black">#242424</color>
     <color name="picker_blue">#2196F3</color>
     <color name="picker_green">#4CAF50</color>
@@ -15,6 +16,7 @@
     <string name="bold">Жирный</string>
     <string name="color">Цвет</string>
     <string name="description_hint">Описание</string>
+    <string name="empty_list">Список пуст</string>
     <string name="list_name">Название списка</string>
     <string name="new_item">Новая запись</string>
     <string name="new_list">Создать список</string>

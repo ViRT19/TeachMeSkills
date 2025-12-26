@@ -146,7 +146,7 @@ public final class MainDataBase_Impl extends MainDataBase {
         final TableInfo _infoShoppingListNames = new TableInfo("shopping_list_names", _columnsShoppingListNames, _foreignKeysShoppingListNames, _indicesShoppingListNames);
         final TableInfo _existingShoppingListNames = TableInfo.read(db, "shopping_list_names");
         if (!_infoShoppingListNames.equals(_existingShoppingListNames)) {
-          return new RoomOpenHelper.ValidationResult(false, "shopping_list_names(ru.ksppoisk.shoppinglist.entities.ShoppingListNames).\n"
+          return new RoomOpenHelper.ValidationResult(false, "shopping_list_names(ru.ksppoisk.shoppinglist.entities.ShoppingListName).\n"
                   + " Expected:\n" + _infoShoppingListNames + "\n"
                   + " Found:\n" + _existingShoppingListNames);
         }

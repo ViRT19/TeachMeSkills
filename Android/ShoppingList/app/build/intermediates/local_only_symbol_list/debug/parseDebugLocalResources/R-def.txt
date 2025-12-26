@@ -5,6 +5,7 @@ anim open_color_picker
 color black
 color dark_gray
 color green
+color light_gray
 color picker_black
 color picker_blue
 color picker_green
@@ -36,6 +37,7 @@ drawable ic_theme_style
 drawable ic_time_format
 id bCreate
 id bNav
+id cardView
 id colorPicker
 id edDescription
 id edNewListName
@@ -45,6 +47,8 @@ id id_color
 id id_save
 id imBlack
 id imBlue
+id imDelete
+id imEdit
 id imGreen
 id imOrange
 id imRed
@@ -55,18 +59,24 @@ id linearLayout
 id main
 id new_item
 id notes
+id pBar
 id placeHolder
+id rcView
 id rcViewNote
 id settings
 id shop_lst
 id textView
+id tvCounter
 id tvDescription
+id tvEmpty
+id tvListName
 id tvTime
 id tvTitle
 layout activity_main
 layout activity_new_note
 layout fragment_note
 layout fragment_shop_list_names
+layout list_name_item
 layout new_list_dialog
 layout note_list_item
 menu bottom_menu
@@ -80,6 +90,7 @@ string app_name
 string bold
 string color
 string description_hint
+string empty_list
 string list_name
 string new_item
 string new_list
