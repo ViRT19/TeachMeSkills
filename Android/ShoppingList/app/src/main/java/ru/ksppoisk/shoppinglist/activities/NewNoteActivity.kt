@@ -29,6 +29,7 @@ import ru.ksppoisk.shoppinglist.entities.NoteItem
 import ru.ksppoisk.shoppinglist.fragments.NoteFragment
 import ru.ksppoisk.shoppinglist.utils.HtmlManager
 import ru.ksppoisk.shoppinglist.utils.MyTouchListener
+import ru.ksppoisk.shoppinglist.utils.TimeManager
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -155,15 +156,15 @@ class NewNoteActivity : AppCompatActivity() {
             null,
             binding.edTitle.text.toString(),
             HtmlManager.toHtml(binding.edDescription.text),
-            getCurrentTime(),
+            TimeManager.getCurrentTime(),
             ""
         )
     }
 
-    private fun getCurrentTime(): String {
+/*    private fun getCurrentTime(): String {
         val formatter = SimpleDateFormat("dd.MM.YYYY - hh:mm:ss", Locale.getDefault())
         return formatter.format(Calendar.getInstance().time)
-    }
+    }*/
 
     private fun actionBarSettings() {
         val ab = supportActionBar
