@@ -3932,6 +3932,7 @@ int id checkbox 0x7f08007e
 int id checked 0x7f08007f
 int id chronometer 0x7f080080
 int id circle_center 0x7f080081
+int id clear_list 0x7f080249
 int id clear_text 0x7f080082
 int id clip_horizontal 0x7f080083
 int id clip_vertical 0x7f080084
@@ -3961,6 +3962,7 @@ int id decelerate 0x7f08009b
 int id decelerateAndComplete 0x7f08009c
 int id decor_content_parent 0x7f08009d
 int id default_activity_button 0x7f08009e
+int id delete_list 0x7f08024a
 int id deltaRelative 0x7f08009f
 int id dependency_ordering 0x7f0800a0
 int id design_bottom_sheet 0x7f0800a1
@@ -3991,6 +3993,7 @@ int id easeOut 0x7f0800b9
 int id east 0x7f0800ba
 int id edDescription 0x7f0800bb
 int id edNewListName 0x7f080239
+int id edNewShopItem 0x7f08024b
 int id edTitle 0x7f0800bc
 int id edge 0x7f0800bd
 int id edit_query 0x7f0800be
@@ -4225,6 +4228,7 @@ int id right_icon 0x7f08019e
 int id right_side 0x7f08019f
 int id rounded 0x7f0801a0
 int id row_index_key 0x7f0801a1
+int id save_item 0x7f08024c
 int id save_non_transition_alpha 0x7f0801a2
 int id save_overlay_view 0x7f0801a3
 int id sawtooth 0x7f0801a4
@@ -4251,6 +4255,7 @@ int id select_dialog_listview 0x7f0801b8
 int id selected 0x7f0801b9
 int id selection_type 0x7f0801ba
 int id settings 0x7f0801bb
+int id share_list 0x7f08024d
 int id sharedValueSet 0x7f0801bc
 int id sharedValueUnset 0x7f0801bd
 int id shop_lst 0x7f0801be
@@ -4522,6 +4527,7 @@ int layout design_navigation_menu 0x7f0b002c
 int layout design_navigation_menu_item 0x7f0b002d
 int layout design_text_input_end_icon 0x7f0b002e
 int layout design_text_input_start_icon 0x7f0b002f
+int layout edit_action_layout 0x7f0b008a
 int layout expand_button 0x7f0b0030
 int layout fragment_note 0x7f0b0031
 int layout fragment_shop_list_names 0x7f0b0086
@@ -4612,6 +4618,7 @@ int layout select_dialog_singlechoice_material 0x7f0b0083
 int layout support_simple_spinner_dropdown_item 0x7f0b0084
 int menu bottom_menu 0x7f0d0000
 int menu new_note_menu 0x7f0d0001
+int menu shop_list_menu 0x7f0d0002
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001
 int mipmap ic_note 0x7f0e0002
@@ -4665,6 +4672,7 @@ int string cancel 0x7f1000e1
 int string character_counter_content_description 0x7f10002b
 int string character_counter_overflowed_content_description 0x7f10002c
 int string character_counter_pattern 0x7f10002d
+int string clear_list 0x7f1000e7
 int string clear_text_end_icon_content_description 0x7f10002e
 int string color 0x7f10002f
 int string common_google_play_services_enable_button 0x7f100030
@@ -4689,6 +4697,7 @@ int string copy 0x7f100042
 int string delete 0x7f1000e2
 int string delete_alert 0x7f1000e3
 int string delete_item 0x7f1000e4
+int string delete_list 0x7f1000e8
 int string description_hint 0x7f100043
 int string empty_list 0x7f1000e0
 int string error_a11y_label 0x7f100044
@@ -4809,6 +4818,7 @@ int string mtrl_timepicker_confirm 0x7f1000b5
 int string nav_rail_collapsed_a11y_label 0x7f1000b6
 int string nav_rail_expanded_a11y_label 0x7f1000b7
 int string new_item 0x7f1000b8
+int string new_item_shop_list 0x7f1000e9
 int string new_list 0x7f1000de
 int string new_list_edit 0x7f1000e6
 int string not_set 0x7f1000b9
@@ -4834,11 +4844,13 @@ int string s5 0x7f1000cc
 int string s6 0x7f1000cd
 int string s7 0x7f1000ce
 int string save 0x7f1000cf
+int string save_item 0x7f1000ea
 int string search_menu_title 0x7f1000d0
 int string searchbar_scrolling_view_behavior 0x7f1000d1
 int string searchview_clear_text_content_description 0x7f1000d2
 int string searchview_navigation_content_description 0x7f1000d3
 int string settings 0x7f1000d4
+int string share_list 0x7f1000eb
 int string shop_lst 0x7f1000d5
 int string side_sheet_accessibility_pane_title 0x7f1000d6
 int string side_sheet_behavior 0x7f1000d7

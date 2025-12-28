@@ -1,6 +1,7 @@
 package ru.ksppoisk.shoppinglist.activities
 
 import android.os.Bundle
+import android.view.Menu
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,10 @@ class ShopListActivity : AppCompatActivity() {
         init()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.shop_list_menu, menu)
+        return true
+    }
     /*
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
