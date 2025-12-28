@@ -2,6 +2,7 @@ package ru.ksppoisk.shoppinglist.activities
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ import ru.ksppoisk.shoppinglist.fragments.NoteFragment.Companion.NEW_NOTE_KEY
 class ShopListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityShopListBinding
     private var shopListNameItem: ShopListNameItem? = null
+    private lateinit var saveItem: MenuItem
     private val mainViewModel: MainViewModel by viewModels {
         MainViewModel.MainViewModelFactory((applicationContext as MainApp).database)
     }
@@ -32,17 +34,30 @@ class ShopListActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.shop_list_menu, menu)
+        saveItem = menu?.findItem(R.id.save_item)!!
+        val newItem = menu.findItem(R.id.new_item)
+        newItem.setOnActionExpandListener(expandActionView())
+        saveItem.isVisible = false
         return true
     }
-    /*
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            it.data?.getSerializableExtra(NEW_NOTE_KEY, NoteItem::class.java)
-        } else {
-            it.data?.getSerializableExtra(NEW_NOTE_KEY) as NoteItem
+    private fun expandActionView(): MenuItem.OnActionExpandListener {
+        return object : MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionCollapse(item: MenuItem): Boolean {
+                saveItem.isVisible = true
+                return true
+            }
+
+            override fun onMenuItemActionExpand(item: MenuItem): Boolean {
+                saveItem.isVisible = false
+                invalidateOptionsMenu()
+                return true
+            }
+
         }
+    }
 
-    */
+    @Suppress("DEPRECATION")
     private fun init() {
         shopListNameItem = intent.getSerializableExtra(SHOP_LIST_NAME) as ShopListNameItem
         binding.tvTest.text = shopListNameItem?.name
