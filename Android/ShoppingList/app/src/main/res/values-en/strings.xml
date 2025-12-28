@@ -11,10 +11,12 @@
     <string name="title_hint">Title</string>
     <string name="description_hint">Description</string>
     <string name="new_list">Create List</string>
+    <string name="new_list_edit">List Name Edit</string>
     <string name="list_name">List Name</string>
     <string name="empty_list">Empty List</string>
     <string name="delete_item">Do you want delete this item?</string>
     <string name="delete_alert">Delete</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
 </resources>

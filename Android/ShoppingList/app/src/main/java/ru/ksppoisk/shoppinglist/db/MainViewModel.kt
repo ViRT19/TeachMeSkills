@@ -7,20 +7,23 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.ksppoisk.shoppinglist.entities.NoteItem
-import ru.ksppoisk.shoppinglist.entities.ShoppingListName
+import ru.ksppoisk.shoppinglist.entities.ShopListNameItem
 
 class MainViewModel(database: MainDataBase) : ViewModel() {
     val dao = database.getDao()
     val allNotes: LiveData<List<NoteItem>> = dao.getAllNotes().asLiveData()
-    val allShopListNames: LiveData<List<ShoppingListName>> = dao.getAllShopListNames().asLiveData()
+    val allShopListNames: LiveData<List<ShopListNameItem>> = dao.getAllShopListNames().asLiveData()
     fun insertNote(note: NoteItem) = viewModelScope.launch {
         dao.insertNote(note)
     }
-    fun insertShopListName(listName: ShoppingListName) = viewModelScope.launch {
+    fun insertShopListName(listName: ShopListNameItem) = viewModelScope.launch {
         dao.insertShopListName(listName)
     }
     fun updateNote(note: NoteItem) = viewModelScope.launch {
         dao.updateNote(note)
+    }
+    fun updateListName(shopListName: ShopListNameItem) = viewModelScope.launch {
+        dao.updateListName(shopListName)
     }
     fun deleteNote(id: Int) = viewModelScope.launch {
         dao.deleteNote(id)

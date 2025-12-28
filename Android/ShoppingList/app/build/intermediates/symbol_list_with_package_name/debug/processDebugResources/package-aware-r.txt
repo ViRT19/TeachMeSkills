@@ -4317,7 +4317,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id textView2
 id text_input_end_icon
 id text_input_error_icon
@@ -4353,8 +4352,10 @@ id tvDescription
 id tvEmpty
 id tvListName
 id tvMessage
+id tvTest
 id tvTime
 id tvTitle
+id tvTitleCreate
 id unchecked
 id uniform
 id unlabeled
@@ -4502,6 +4503,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_new_note
+layout activity_shop_list
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -4809,6 +4811,7 @@ string nav_rail_collapsed_a11y_label
 string nav_rail_expanded_a11y_label
 string new_item
 string new_list
+string new_list_edit
 string not_set
 string notes
 string offline_notification_text
@@ -4843,6 +4846,7 @@ string side_sheet_behavior
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
 string title_hint
+string update
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat

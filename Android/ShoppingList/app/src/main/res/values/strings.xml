@@ -10,11 +10,13 @@
     <string name="title_hint">Заголовок</string>
     <string name="description_hint">Описание</string>
     <string name="new_list">Создать список</string>
+    <string name="new_list_edit">Редактор имени списка</string>
     <string name="list_name">Название списка</string>
     <string name="empty_list">Список пуст</string>
     <string name="delete_item">Вы действительно хотите удалить этот список?</string>
     <string name="delete_alert">Удаление</string>
     <string name="delete">Удалить</string>
     <string name="cancel">Отменить</string>
+    <string name="update">Обновить</string>
 
 </resources>

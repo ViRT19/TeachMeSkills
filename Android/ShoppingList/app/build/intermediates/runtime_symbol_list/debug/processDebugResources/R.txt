@@ -4316,7 +4316,6 @@ int id textSpacerNoButtons 0x7f0801f9
 int id textSpacerNoTitle 0x7f0801fa
 int id textStart 0x7f0801fb
 int id textTop 0x7f0801fc
-int id textView 0x7f08023a
 int id textView2 0x7f080245
 int id text_input_end_icon 0x7f0801fd
 int id text_input_error_icon 0x7f0801fe
@@ -4352,8 +4351,10 @@ int id tvDescription 0x7f08021a
 int id tvEmpty 0x7f080241
 int id tvListName 0x7f080242
 int id tvMessage 0x7f080246
+int id tvTest 0x7f080248
 int id tvTime 0x7f08021b
 int id tvTitle 0x7f08021c
+int id tvTitleCreate 0x7f080247
 int id unchecked 0x7f08021d
 int id uniform 0x7f08021e
 int id unlabeled 0x7f08021f
@@ -4501,6 +4502,7 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
 int layout activity_new_note 0x7f0b001d
+int layout activity_shop_list 0x7f0b0089
 int layout browser_actions_context_menu_page 0x7f0b001e
 int layout browser_actions_context_menu_row 0x7f0b001f
 int layout custom_dialog 0x7f0b0020
@@ -4808,6 +4810,7 @@ int string nav_rail_collapsed_a11y_label 0x7f1000b6
 int string nav_rail_expanded_a11y_label 0x7f1000b7
 int string new_item 0x7f1000b8
 int string new_list 0x7f1000de
+int string new_list_edit 0x7f1000e6
 int string not_set 0x7f1000b9
 int string notes 0x7f1000ba
 int string offline_notification_text 0x7f1000bb
@@ -4842,6 +4845,7 @@ int string side_sheet_behavior 0x7f1000d7
 int string status_bar_notification_info_overflow 0x7f1000d8
 int string summary_collapsed_preference_list 0x7f1000d9
 int string title_hint 0x7f1000da
+int string update 0x7f1000e5
 int string v7_preference_off 0x7f1000db
 int string v7_preference_on 0x7f1000dc
 int style AlertDialog_AppCompat 0x7f110000

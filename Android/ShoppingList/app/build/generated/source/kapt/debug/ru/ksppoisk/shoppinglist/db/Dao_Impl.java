@@ -27,7 +27,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.flow.Flow;
 import ru.ksppoisk.shoppinglist.entities.NoteItem;
-import ru.ksppoisk.shoppinglist.entities.ShoppingListName;
+import ru.ksppoisk.shoppinglist.entities.ShopListNameItem;
 
 @Generated("androidx.room.RoomProcessor")
 @SuppressWarnings({"unchecked", "deprecation"})
@@ -36,9 +36,11 @@ public final class Dao_Impl implements Dao {
 
   private final EntityInsertionAdapter<NoteItem> __insertionAdapterOfNoteItem;
 
-  private final EntityInsertionAdapter<ShoppingListName> __insertionAdapterOfShoppingListName;
+  private final EntityInsertionAdapter<ShopListNameItem> __insertionAdapterOfShopListNameItem;
 
   private final EntityDeletionOrUpdateAdapter<NoteItem> __updateAdapterOfNoteItem;
+
+  private final EntityDeletionOrUpdateAdapter<ShopListNameItem> __updateAdapterOfShopListNameItem;
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteNote;
 
@@ -83,7 +85,7 @@ public final class Dao_Impl implements Dao {
         }
       }
     };
-    this.__insertionAdapterOfShoppingListName = new EntityInsertionAdapter<ShoppingListName>(__db) {
+    this.__insertionAdapterOfShopListNameItem = new EntityInsertionAdapter<ShopListNameItem>(__db) {
       @Override
       @NonNull
       protected String createQuery() {
@@ -92,7 +94,7 @@ public final class Dao_Impl implements Dao {
 
       @Override
       protected void bind(@NonNull final SupportSQLiteStatement statement,
-          @NonNull final ShoppingListName entity) {
+          @NonNull final ShopListNameItem entity) {
         if (entity.getId() == null) {
           statement.bindNull(1);
         } else {
@@ -159,6 +161,45 @@ public final class Dao_Impl implements Dao {
         }
       }
     };
+    this.__updateAdapterOfShopListNameItem = new EntityDeletionOrUpdateAdapter<ShopListNameItem>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "UPDATE OR ABORT `shopping_list_names` SET `id` = ?,`name` = ?,`time` = ?,`allItemCount` = ?,`checkItemsCount` = ?,`itemsIds` = ? WHERE `id` = ?";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final ShopListNameItem entity) {
+        if (entity.getId() == null) {
+          statement.bindNull(1);
+        } else {
+          statement.bindLong(1, entity.getId());
+        }
+        if (entity.getName() == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindString(2, entity.getName());
+        }
+        if (entity.getTime() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getTime());
+        }
+        statement.bindLong(4, entity.getAllItemCounter());
+        statement.bindLong(5, entity.getCheckItemsCounter());
+        if (entity.getItemIds() == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.getItemIds());
+        }
+        if (entity.getId() == null) {
+          statement.bindNull(7);
+        } else {
+          statement.bindLong(7, entity.getId());
+        }
+      }
+    };
     this.__preparedStmtOfDeleteNote = new SharedSQLiteStatement(__db) {
       @Override
       @NonNull
@@ -196,7 +237,7 @@ public final class Dao_Impl implements Dao {
   }
 
   @Override
-  public Object insertShopListName(final ShoppingListName name,
+  public Object insertShopListName(final ShopListNameItem name,
       final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
@@ -204,7 +245,7 @@ public final class Dao_Impl implements Dao {
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfShoppingListName.insert(name);
+          __insertionAdapterOfShopListNameItem.insert(name);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -223,6 +264,25 @@ public final class Dao_Impl implements Dao {
         __db.beginTransaction();
         try {
           __updateAdapterOfNoteItem.handle(note);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object updateListName(final ShopListNameItem shopListName,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfShopListNameItem.handle(shopListName);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -347,13 +407,13 @@ public final class Dao_Impl implements Dao {
   }
 
   @Override
-  public Flow<List<ShoppingListName>> getAllShopListNames() {
+  public Flow<List<ShopListNameItem>> getAllShopListNames() {
     final String _sql = "SELECT * FROM shopping_list_names";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return CoroutinesRoom.createFlow(__db, false, new String[] {"shopping_list_names"}, new Callable<List<ShoppingListName>>() {
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"shopping_list_names"}, new Callable<List<ShopListNameItem>>() {
       @Override
       @NonNull
-      public List<ShoppingListName> call() throws Exception {
+      public List<ShopListNameItem> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
@@ -362,9 +422,9 @@ public final class Dao_Impl implements Dao {
           final int _cursorIndexOfAllItemCounter = CursorUtil.getColumnIndexOrThrow(_cursor, "allItemCount");
           final int _cursorIndexOfCheckItemsCounter = CursorUtil.getColumnIndexOrThrow(_cursor, "checkItemsCount");
           final int _cursorIndexOfItemIds = CursorUtil.getColumnIndexOrThrow(_cursor, "itemsIds");
-          final List<ShoppingListName> _result = new ArrayList<ShoppingListName>(_cursor.getCount());
+          final List<ShopListNameItem> _result = new ArrayList<ShopListNameItem>(_cursor.getCount());
           while (_cursor.moveToNext()) {
-            final ShoppingListName _item;
+            final ShopListNameItem _item;
             final Integer _tmpId;
             if (_cursor.isNull(_cursorIndexOfId)) {
               _tmpId = null;
@@ -393,7 +453,7 @@ public final class Dao_Impl implements Dao {
             } else {
               _tmpItemIds = _cursor.getString(_cursorIndexOfItemIds);
             }
-            _item = new ShoppingListName(_tmpId,_tmpName,_tmpTime,_tmpAllItemCounter,_tmpCheckItemsCounter,_tmpItemIds);
+            _item = new ShopListNameItem(_tmpId,_tmpName,_tmpTime,_tmpAllItemCounter,_tmpCheckItemsCounter,_tmpItemIds);
             _result.add(_item);
           }
           return _result;
