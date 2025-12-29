@@ -1,7 +1,7 @@
 package ru.ksppoisk.shoppinglist.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +9,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.ksppoisk.shoppinglist.activities.MainApp
+import ru.ksppoisk.shoppinglist.activities.ShopListActivity
 import ru.ksppoisk.shoppinglist.databinding.FragmentShopListNamesBinding
 import ru.ksppoisk.shoppinglist.db.MainViewModel
 import ru.ksppoisk.shoppinglist.db.ShopListNameAdapter
+import ru.ksppoisk.shoppinglist.dialogs.DeleteDialog
 import ru.ksppoisk.shoppinglist.dialogs.NewListDialog
-import ru.ksppoisk.shoppinglist.entities.ShoppingListName
+import ru.ksppoisk.shoppinglist.entities.ShopListNameItem
 import ru.ksppoisk.shoppinglist.utils.TimeManager
 
-class ShopListNamesFragment : BaseFragment() {
+class ShopListNamesFragment : BaseFragment(), ShopListNameAdapter.Listener {
     private lateinit var binding: FragmentShopListNamesBinding
     private lateinit var adapter: ShopListNameAdapter
 
@@ -35,15 +37,15 @@ class ShopListNamesFragment : BaseFragment() {
     override fun onClickNew() {
         NewListDialog.showDialog(activity as AppCompatActivity, object : NewListDialog.Listener {
             override fun onClick(name: String) {
-                val shopListName = ShoppingListName(
+                val shopListName = ShopListNameItem(
                     null,
                     name,
                     TimeManager.getCurrentTime(),
-                    0,0,""
+                    0, 0, ""
                 )
                 mainViewModel.insertShopListName(shopListName)
             }
-        })
+        }, "")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +60,7 @@ class ShopListNamesFragment : BaseFragment() {
 
     private fun initRcView() = with(binding) {
         rcView.layoutManager = LinearLayoutManager(activity)
-        adapter = ShopListNameAdapter()
+        adapter = ShopListNameAdapter(this@ShopListNamesFragment)
         rcView.adapter = adapter
     }
 
@@ -66,6 +68,31 @@ class ShopListNamesFragment : BaseFragment() {
         mainViewModel.allShopListNames.observe(viewLifecycleOwner, {
             adapter.submitList(it)
         })
+    }
+
+    override fun deleteItem(id: Int) {
+        DeleteDialog.showDialog(context as AppCompatActivity, object : DeleteDialog.Listener {
+            override fun onClick() {
+                mainViewModel.deleteShopListName(id)
+            }
+
+        })
+    }
+
+    override fun editItem(shopListNameItem: ShopListNameItem) {
+        NewListDialog.showDialog(activity as AppCompatActivity, object : NewListDialog.Listener {
+            override fun onClick(name: String) {
+                mainViewModel.updateListName(shopListNameItem.copy(name = name))
+            }
+        }, shopListNameItem.name)
+
+    }
+
+    override fun onClickItem(shopListNameItem: ShopListNameItem) {
+        val i = Intent(activity, ShopListActivity::class.java).apply {
+            putExtra(ShopListActivity.SHOP_LIST_NAME, shopListNameItem)
+        }
+        startActivity(i)
     }
 
     companion object {

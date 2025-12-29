@@ -3894,7 +3894,9 @@ id autoHide
 id autoLimit
 id availableSpace
 id axisRelative
+id bCancel
 id bCreate
+id bDelete
 id bNav
 id barrier
 id baseline
@@ -3931,6 +3933,7 @@ id checkbox
 id checked
 id chronometer
 id circle_center
+id clear_list
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -3960,6 +3963,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete_list
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3990,6 +3994,7 @@ id easeOut
 id east
 id edDescription
 id edNewListName
+id edNewShopItem
 id edTitle
 id edge
 id edit_query
@@ -4224,6 +4229,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id save_item
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -4250,6 +4256,7 @@ id select_dialog_listview
 id selected
 id selection_type
 id settings
+id share_list
 id sharedValueSet
 id sharedValueUnset
 id shop_lst
@@ -4315,7 +4322,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
+id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4349,8 +4356,11 @@ id tvCounter
 id tvDescription
 id tvEmpty
 id tvListName
+id tvMessage
+id tvTest
 id tvTime
 id tvTitle
+id tvTitleCreate
 id unchecked
 id uniform
 id unlabeled
@@ -4498,9 +4508,11 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_new_note
+layout activity_shop_list
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
+layout delete_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -4516,6 +4528,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout edit_action_layout
 layout expand_button
 layout fragment_note
 layout fragment_shop_list_names
@@ -4606,6 +4619,7 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_menu
 menu new_note_menu
+menu shop_list_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap ic_note
@@ -4655,9 +4669,11 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string clear_list
 string clear_text_end_icon_content_description
 string color
 string common_google_play_services_enable_button
@@ -4679,6 +4695,10 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy
+string delete
+string delete_alert
+string delete_item
+string delete_list
 string description_hint
 string empty_list
 string error_a11y_label
@@ -4799,7 +4819,9 @@ string mtrl_timepicker_confirm
 string nav_rail_collapsed_a11y_label
 string nav_rail_expanded_a11y_label
 string new_item
+string new_item_shop_list
 string new_list
+string new_list_edit
 string not_set
 string notes
 string offline_notification_text
@@ -4823,17 +4845,20 @@ string s5
 string s6
 string s7
 string save
+string save_item
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
 string settings
+string share_list
 string shop_lst
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
 string title_hint
+string update
 string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat
