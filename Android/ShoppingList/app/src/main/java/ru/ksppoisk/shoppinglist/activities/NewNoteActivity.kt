@@ -161,11 +161,6 @@ class NewNoteActivity : AppCompatActivity() {
         )
     }
 
-/*    private fun getCurrentTime(): String {
-        val formatter = SimpleDateFormat("dd.MM.YYYY - hh:mm:ss", Locale.getDefault())
-        return formatter.format(Calendar.getInstance().time)
-    }*/
-
     private fun actionBarSettings() {
         val ab = supportActionBar
         ab?.setDisplayHomeAsUpEnabled(true)

@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toStartOf="@+id/imDelete"
         app:layout_constraintTop_toTopOf="@+id/cardView"
-        app:srcCompat="@drawable/ic_edit_library" />
+        app:srcCompat="@drawable/ic_edit_list" />
 
     <ImageButton
         android:id="@+id/imDelete"

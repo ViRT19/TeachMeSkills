@@ -27,6 +27,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.flow.Flow;
 import ru.ksppoisk.shoppinglist.entities.NoteItem;
+import ru.ksppoisk.shoppinglist.entities.ShopListItem;
 import ru.ksppoisk.shoppinglist.entities.ShopListNameItem;
 
 @Generated("androidx.room.RoomProcessor")
@@ -35,6 +36,8 @@ public final class Dao_Impl implements Dao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<NoteItem> __insertionAdapterOfNoteItem;
+
+  private final EntityInsertionAdapter<ShopListItem> __insertionAdapterOfShopListItem;
 
   private final EntityInsertionAdapter<ShopListNameItem> __insertionAdapterOfShopListNameItem;
 
@@ -83,6 +86,36 @@ public final class Dao_Impl implements Dao {
         } else {
           statement.bindString(5, entity.getCategory());
         }
+      }
+    };
+    this.__insertionAdapterOfShopListItem = new EntityInsertionAdapter<ShopListItem>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "INSERT OR ABORT INTO `shop_list_item` (`id`,`name`,`itemInfo`,`itemChecked`,`listId`,`itemType`) VALUES (?,?,?,?,?,?)";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final ShopListItem entity) {
+        if (entity.getId() == null) {
+          statement.bindNull(1);
+        } else {
+          statement.bindLong(1, entity.getId());
+        }
+        if (entity.getName() == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindString(2, entity.getName());
+        }
+        if (entity.getItemInfo() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getItemInfo());
+        }
+        statement.bindLong(4, entity.getItemChecked());
+        statement.bindLong(5, entity.getListId());
+        statement.bindLong(6, entity.getItemType());
       }
     };
     this.__insertionAdapterOfShopListNameItem = new EntityInsertionAdapter<ShopListNameItem>(__db) {
@@ -227,6 +260,25 @@ public final class Dao_Impl implements Dao {
         __db.beginTransaction();
         try {
           __insertionAdapterOfNoteItem.insert(note);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object insertItem(final ShopListItem shopListItem,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfShopListItem.insert(shopListItem);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -454,6 +506,67 @@ public final class Dao_Impl implements Dao {
               _tmpItemIds = _cursor.getString(_cursorIndexOfItemIds);
             }
             _item = new ShopListNameItem(_tmpId,_tmpName,_tmpTime,_tmpAllItemCounter,_tmpCheckItemsCounter,_tmpItemIds);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
+      }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
+  }
+
+  @Override
+  public Flow<List<ShopListItem>> getAllShopListItems(final int listId) {
+    final String _sql = "SELECT * FROM shop_list_item WHERE listId LIKE ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, listId);
+    return CoroutinesRoom.createFlow(__db, false, new String[] {"shop_list_item"}, new Callable<List<ShopListItem>>() {
+      @Override
+      @NonNull
+      public List<ShopListItem> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
+          final int _cursorIndexOfItemInfo = CursorUtil.getColumnIndexOrThrow(_cursor, "itemInfo");
+          final int _cursorIndexOfItemChecked = CursorUtil.getColumnIndexOrThrow(_cursor, "itemChecked");
+          final int _cursorIndexOfListId = CursorUtil.getColumnIndexOrThrow(_cursor, "listId");
+          final int _cursorIndexOfItemType = CursorUtil.getColumnIndexOrThrow(_cursor, "itemType");
+          final List<ShopListItem> _result = new ArrayList<ShopListItem>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final ShopListItem _item;
+            final Integer _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getInt(_cursorIndexOfId);
+            }
+            final String _tmpName;
+            if (_cursor.isNull(_cursorIndexOfName)) {
+              _tmpName = null;
+            } else {
+              _tmpName = _cursor.getString(_cursorIndexOfName);
+            }
+            final String _tmpItemInfo;
+            if (_cursor.isNull(_cursorIndexOfItemInfo)) {
+              _tmpItemInfo = null;
+            } else {
+              _tmpItemInfo = _cursor.getString(_cursorIndexOfItemInfo);
+            }
+            final int _tmpItemChecked;
+            _tmpItemChecked = _cursor.getInt(_cursorIndexOfItemChecked);
+            final int _tmpListId;
+            _tmpListId = _cursor.getInt(_cursorIndexOfListId);
+            final int _tmpItemType;
+            _tmpItemType = _cursor.getInt(_cursorIndexOfItemType);
+            _item = new ShopListItem(_tmpId,_tmpName,_tmpItemInfo,_tmpItemChecked,_tmpListId,_tmpItemType);
             _result.add(_item);
           }
           return _result;
