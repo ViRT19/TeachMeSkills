@@ -56,6 +56,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.ShoppingList" >
         <activity
+            android:name="ru.ksppoisk.shoppinglist.activities.ShopListActivity"
+            android:exported="false" />
+        <activity
             android:name="ru.ksppoisk.shoppinglist.activities.NewNoteActivity"
             android:exported="false" />
         <activity
