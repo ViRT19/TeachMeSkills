@@ -7,6 +7,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.ksppoisk.shoppinglist.entities.NoteItem
+import ru.ksppoisk.shoppinglist.entities.ShopListItem
 import ru.ksppoisk.shoppinglist.entities.ShopListNameItem
 
 class MainViewModel(database: MainDataBase) : ViewModel() {
@@ -18,6 +19,9 @@ class MainViewModel(database: MainDataBase) : ViewModel() {
     }
     fun insertShopListName(listName: ShopListNameItem) = viewModelScope.launch {
         dao.insertShopListName(listName)
+    }
+    fun insertShopItem(shopListItem: ShopListItem) = viewModelScope.launch {
+        dao.insertItem(shopListItem)
     }
     fun updateNote(note: NoteItem) = viewModelScope.launch {
         dao.updateNote(note)

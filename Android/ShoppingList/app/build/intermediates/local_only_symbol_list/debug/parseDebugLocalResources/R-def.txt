@@ -17,6 +17,7 @@ color white
 drawable ic_bold
 drawable ic_color
 drawable ic_delete
+drawable ic_delete_library
 drawable ic_delete_list
 drawable ic_edit_library
 drawable ic_edit_list
@@ -40,6 +41,7 @@ id bCreate
 id bDelete
 id bNav
 id cardView
+id chBox
 id clear_list
 id colorPicker
 id delete_list
@@ -76,8 +78,10 @@ id textView2
 id tvCounter
 id tvDescription
 id tvEmpty
+id tvInfo
 id tvListName
 id tvMessage
+id tvName
 id tvTest
 id tvTime
 id tvTitle
@@ -92,6 +96,8 @@ layout fragment_shop_list_names
 layout list_name_item
 layout new_list_dialog
 layout note_list_item
+layout shop_library_list_item
+layout shop_list_item
 menu bottom_menu
 menu new_note_menu
 menu shop_list_menu

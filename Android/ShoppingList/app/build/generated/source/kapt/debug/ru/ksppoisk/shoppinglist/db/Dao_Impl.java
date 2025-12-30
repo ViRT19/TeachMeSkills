@@ -27,6 +27,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.flow.Flow;
 import ru.ksppoisk.shoppinglist.entities.NoteItem;
+import ru.ksppoisk.shoppinglist.entities.ShopListItem;
 import ru.ksppoisk.shoppinglist.entities.ShopListNameItem;
 
 @Generated("androidx.room.RoomProcessor")
@@ -35,6 +36,8 @@ public final class Dao_Impl implements Dao {
   private final RoomDatabase __db;
 
   private final EntityInsertionAdapter<NoteItem> __insertionAdapterOfNoteItem;
+
+  private final EntityInsertionAdapter<ShopListItem> __insertionAdapterOfShopListItem;
 
   private final EntityInsertionAdapter<ShopListNameItem> __insertionAdapterOfShopListNameItem;
 
@@ -83,6 +86,36 @@ public final class Dao_Impl implements Dao {
         } else {
           statement.bindString(5, entity.getCategory());
         }
+      }
+    };
+    this.__insertionAdapterOfShopListItem = new EntityInsertionAdapter<ShopListItem>(__db) {
+      @Override
+      @NonNull
+      protected String createQuery() {
+        return "INSERT OR ABORT INTO `shop_list_item` (`id`,`name`,`itemInfo`,`itemChecked`,`listId`,`itemType`) VALUES (?,?,?,?,?,?)";
+      }
+
+      @Override
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final ShopListItem entity) {
+        if (entity.getId() == null) {
+          statement.bindNull(1);
+        } else {
+          statement.bindLong(1, entity.getId());
+        }
+        if (entity.getName() == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindString(2, entity.getName());
+        }
+        if (entity.getItemInfo() == null) {
+          statement.bindNull(3);
+        } else {
+          statement.bindString(3, entity.getItemInfo());
+        }
+        statement.bindLong(4, entity.getItemChecked());
+        statement.bindLong(5, entity.getListId());
+        statement.bindLong(6, entity.getItemType());
       }
     };
     this.__insertionAdapterOfShopListNameItem = new EntityInsertionAdapter<ShopListNameItem>(__db) {
@@ -227,6 +260,25 @@ public final class Dao_Impl implements Dao {
         __db.beginTransaction();
         try {
           __insertionAdapterOfNoteItem.insert(note);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object insertItem(final ShopListItem shopListItem,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfShopListItem.insert(shopListItem);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {

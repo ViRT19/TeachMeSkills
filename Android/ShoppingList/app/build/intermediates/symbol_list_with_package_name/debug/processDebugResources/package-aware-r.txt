@@ -3692,6 +3692,7 @@ drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_color
 drawable ic_delete
+drawable ic_delete_library
 drawable ic_delete_list
 drawable ic_edit_library
 drawable ic_edit_list
@@ -3926,6 +3927,7 @@ id centerCrop
 id centerInside
 id center_horizontal
 id center_vertical
+id chBox
 id chain
 id chain2
 id chains
@@ -4355,8 +4357,10 @@ id triangle
 id tvCounter
 id tvDescription
 id tvEmpty
+id tvInfo
 id tvListName
 id tvMessage
+id tvName
 id tvTest
 id tvTime
 id tvTitle
@@ -4616,6 +4620,8 @@ layout preference_widget_switch_compat
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout shop_library_list_item
+layout shop_list_item
 layout support_simple_spinner_dropdown_item
 menu bottom_menu
 menu new_note_menu

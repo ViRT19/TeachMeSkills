@@ -1,12 +1,11 @@
 package ru.ksppoisk.shoppinglist.entities
 
-import android.R
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "shop_list_item")
-data class ShoppingListItem(
+data class ShopListItem(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,
     @ColumnInfo(name = "name")

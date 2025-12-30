@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.databinding.ListNameItemBinding
 import ru.ksppoisk.shoppinglist.entities.ShopListNameItem
-import ru.ksppoisk.shoppinglist.entities.ShoppingListItem
+import ru.ksppoisk.shoppinglist.entities.ShopListItem
 
 
 class ShopListItemAdapter(private val listener: Listener) :
-    ListAdapter<ShoppingListItem, ShopListItemAdapter.ItemHolder>(ItemComporator()) {
+    ListAdapter<ShopListItem, ShopListItemAdapter.ItemHolder>(ItemComporator()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         return if (viewType == 0)
             ItemHolder.createShopItem(parent)
@@ -37,11 +37,11 @@ class ShopListItemAdapter(private val listener: Listener) :
     class ItemHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = ListNameItemBinding.bind(view)
 
-        fun setItemData(shopListItem: ShoppingListItem, listener: Listener) = with(binding) {
+        fun setItemData(shopListItem: ShopListItem, listener: Listener) = with(binding) {
 
         }
 
-        fun setLibraryData(shopListItem: ShoppingListItem, listener: Listener) = with(binding) {
+        fun setLibraryData(shopListItem: ShopListItem, listener: Listener) = with(binding) {
 
         }
 
@@ -62,17 +62,17 @@ class ShopListItemAdapter(private val listener: Listener) :
         }
     }
 
-    class ItemComporator : DiffUtil.ItemCallback<ShoppingListItem>() {
+    class ItemComporator : DiffUtil.ItemCallback<ShopListItem>() {
         override fun areItemsTheSame(
-            oldItem: ShoppingListItem,
-            newItem: ShoppingListItem
+            oldItem: ShopListItem,
+            newItem: ShopListItem
         ): Boolean {
             return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(
-            oldItem: ShoppingListItem,
-            newItem: ShoppingListItem
+            oldItem: ShopListItem,
+            newItem: ShopListItem
         ): Boolean {
             return oldItem == newItem
         }
