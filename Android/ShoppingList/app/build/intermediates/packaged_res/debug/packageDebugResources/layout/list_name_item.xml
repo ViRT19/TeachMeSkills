@@ -10,19 +10,19 @@
         android:id="@+id/imEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/picker_green"
+        android:backgroundTint="@color/green"
         android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toStartOf="@+id/imDelete"
         app:layout_constraintTop_toTopOf="@+id/cardView"
-        app:srcCompat="@drawable/ic_edit_library" />
+        app:srcCompat="@drawable/ic_edit_list" />
 
     <ImageButton
         android:id="@+id/imDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        android:backgroundTint="@color/picker_red"
+        android:backgroundTint="@color/red"
         android:elevation="10dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
@@ -73,6 +73,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/counterCard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"

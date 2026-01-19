@@ -44,7 +44,7 @@ public final class ShopListNameAdapter extends androidx.recyclerview.widget.List
         }
     }
     
-    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \r2\u00020\u0001:\u0001\rB\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u0016\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u000e"}, d2 = {"Lru/ksppoisk/shoppinglist/db/ShopListNameAdapter$ItemHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "(Landroid/view/View;)V", "binding", "Lru/ksppoisk/shoppinglist/databinding/ListNameItemBinding;", "setData", "", "shopListNameItem", "Lru/ksppoisk/shoppinglist/entities/ShopListNameItem;", "listener", "Lru/ksppoisk/shoppinglist/db/ShopListNameAdapter$Listener;", "Companion", "app_debug"})
+    @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u00122\u00020\u0001:\u0001\u0012B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u0018\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0002J\u0016\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\n2\u0006\u0010\u0010\u001a\u00020\u0011R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0013"}, d2 = {"Lru/ksppoisk/shoppinglist/db/ShopListNameAdapter$ItemHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "view", "Landroid/view/View;", "(Landroid/view/View;)V", "binding", "Lru/ksppoisk/shoppinglist/databinding/ListNameItemBinding;", "getProgressColorState", "", "item", "Lru/ksppoisk/shoppinglist/entities/ShopListNameItem;", "context", "Landroid/content/Context;", "setData", "", "shopListNameItem", "listener", "Lru/ksppoisk/shoppinglist/db/ShopListNameAdapter$Listener;", "Companion", "app_debug"})
     public static final class ItemHolder extends androidx.recyclerview.widget.RecyclerView.ViewHolder {
         @org.jetbrains.annotations.NotNull()
         private final ru.ksppoisk.shoppinglist.databinding.ListNameItemBinding binding = null;
@@ -59,6 +59,10 @@ public final class ShopListNameAdapter extends androidx.recyclerview.widget.List
         public final void setData(@org.jetbrains.annotations.NotNull()
         ru.ksppoisk.shoppinglist.entities.ShopListNameItem shopListNameItem, @org.jetbrains.annotations.NotNull()
         ru.ksppoisk.shoppinglist.db.ShopListNameAdapter.Listener listener) {
+        }
+        
+        private final int getProgressColorState(ru.ksppoisk.shoppinglist.entities.ShopListNameItem item, android.content.Context context) {
+            return 0;
         }
         
         @kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006\u00a8\u0006\u0007"}, d2 = {"Lru/ksppoisk/shoppinglist/db/ShopListNameAdapter$ItemHolder$Companion;", "", "()V", "create", "Lru/ksppoisk/shoppinglist/db/ShopListNameAdapter$ItemHolder;", "parent", "Landroid/view/ViewGroup;", "app_debug"})
