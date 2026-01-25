@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.ui)
     //start
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
@@ -58,6 +59,7 @@ dependencies {
     implementation("androidx.preference:preference-ktx:1.1.1")
     implementation("com.google.android.gms:play-services-ads:20.5.0")
     implementation("com.android.billingclient:billing:4.0.0")
+    implementation("androidx.preference:preference-ktx:1.2.0")
     //End
     implementation(libs.material)
     implementation(libs.androidx.activity)

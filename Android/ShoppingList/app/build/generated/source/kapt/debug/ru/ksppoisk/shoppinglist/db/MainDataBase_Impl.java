@@ -36,10 +36,10 @@ public final class MainDataBase_Impl extends MainDataBase {
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `library` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `note_list` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` TEXT NOT NULL, `content` TEXT NOT NULL, `time` TEXT NOT NULL, `category` TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `shop_list_item` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `itemInfo` TEXT, `itemChecked` INTEGER NOT NULL, `listId` INTEGER NOT NULL, `itemType` TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `shop_list_item` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `itemInfo` TEXT NOT NULL, `itemChecked` INTEGER NOT NULL, `listId` INTEGER NOT NULL, `itemType` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `shopping_list_names` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT NOT NULL, `time` TEXT NOT NULL, `allItemCount` INTEGER NOT NULL, `checkItemsCount` INTEGER NOT NULL, `itemsIds` TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fb178b979d96919cdb122db42709e0f9')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd7c7e2b7f18e3c3508b0d56070b7d16f')");
       }
 
       @Override
@@ -121,16 +121,16 @@ public final class MainDataBase_Impl extends MainDataBase {
         final HashMap<String, TableInfo.Column> _columnsShopListItem = new HashMap<String, TableInfo.Column>(6);
         _columnsShopListItem.put("id", new TableInfo.Column("id", "INTEGER", false, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsShopListItem.put("name", new TableInfo.Column("name", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsShopListItem.put("itemInfo", new TableInfo.Column("itemInfo", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsShopListItem.put("itemInfo", new TableInfo.Column("itemInfo", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsShopListItem.put("itemChecked", new TableInfo.Column("itemChecked", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsShopListItem.put("listId", new TableInfo.Column("listId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsShopListItem.put("itemType", new TableInfo.Column("itemType", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsShopListItem.put("itemType", new TableInfo.Column("itemType", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysShopListItem = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesShopListItem = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoShopListItem = new TableInfo("shop_list_item", _columnsShopListItem, _foreignKeysShopListItem, _indicesShopListItem);
         final TableInfo _existingShopListItem = TableInfo.read(db, "shop_list_item");
         if (!_infoShopListItem.equals(_existingShopListItem)) {
-          return new RoomOpenHelper.ValidationResult(false, "shop_list_item(ru.ksppoisk.shoppinglist.entities.ShoppingListItem).\n"
+          return new RoomOpenHelper.ValidationResult(false, "shop_list_item(ru.ksppoisk.shoppinglist.entities.ShopListItem).\n"
                   + " Expected:\n" + _infoShopListItem + "\n"
                   + " Found:\n" + _existingShopListItem);
         }
@@ -146,13 +146,13 @@ public final class MainDataBase_Impl extends MainDataBase {
         final TableInfo _infoShoppingListNames = new TableInfo("shopping_list_names", _columnsShoppingListNames, _foreignKeysShoppingListNames, _indicesShoppingListNames);
         final TableInfo _existingShoppingListNames = TableInfo.read(db, "shopping_list_names");
         if (!_infoShoppingListNames.equals(_existingShoppingListNames)) {
-          return new RoomOpenHelper.ValidationResult(false, "shopping_list_names(ru.ksppoisk.shoppinglist.entities.ShoppingListNames).\n"
+          return new RoomOpenHelper.ValidationResult(false, "shopping_list_names(ru.ksppoisk.shoppinglist.entities.ShopListNameItem).\n"
                   + " Expected:\n" + _infoShoppingListNames + "\n"
                   + " Found:\n" + _existingShoppingListNames);
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "fb178b979d96919cdb122db42709e0f9", "c53e2af9766bc245ccc61c37f15d226a");
+    }, "d7c7e2b7f18e3c3508b0d56070b7d16f", "1e34ee2d8f7a721aea1a0ab6931b2eb3");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
