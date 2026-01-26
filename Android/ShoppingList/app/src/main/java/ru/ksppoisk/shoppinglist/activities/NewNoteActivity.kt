@@ -51,7 +51,6 @@ class NewNoteActivity : AppCompatActivity() {
             defPref = android.preference.PreferenceManager.getDefaultSharedPreferences(this)
         else
             defPref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-//        marginTop()
         setTheme(getSelectedTheme())
         setContentView(binding.root)
         init()
