@@ -44,7 +44,17 @@ class NoteFragment : BaseFragment(), NoteAdapter.Listener {
     }
 
     override fun onClickNew() {
-        editLauncher.launch(Intent(activity, NewNoteActivity::class.java))
+        val intent = Intent(activity, NewNoteActivity::class.java).apply {
+            putExtra(NEW_NOTE_KEY, NoteItem(
+                null,
+                "",
+                "",
+                "",
+                ""
+            ))
+        }
+//        editLauncher.launch(Intent(activity, NewNoteActivity::class.java))
+        editLauncher.launch(intent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

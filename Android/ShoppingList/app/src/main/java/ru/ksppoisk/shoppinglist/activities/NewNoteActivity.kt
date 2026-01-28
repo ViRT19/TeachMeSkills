@@ -24,6 +24,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.preference.PreferenceManager
 import ru.ksppoisk.shoppinglist.R
@@ -55,8 +56,9 @@ class NewNoteActivity : AppCompatActivity() {
         getNote()
         onClickColorPicker()
         setTextSize()
-//      actionMenuCallBack() // Запуск удаления actionMenu при выделении
+      actionMenuCallBack() // Запуск удаления actionMenu при выделении
     }
+
 
     @SuppressLint("ClickableViewAccessibility")
     private fun init() {
@@ -81,7 +83,7 @@ class NewNoteActivity : AppCompatActivity() {
             else
                 intent.getSerializableExtra(NoteFragment.NEW_NOTE_KEY) as NoteItem
         if (sNote != null) {
-            note = sNote as NoteItem
+            note = sNote
             fillNote()
         }
     }
@@ -247,4 +249,5 @@ class NewNoteActivity : AppCompatActivity() {
     private fun EditText.setTextSize(size: String?) {
         if (size != null) this.textSize = size.toFloat()
     }
-}
+
+    }

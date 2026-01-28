@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity(), NewListDialog.Listener {
         Log.d("MyLog", "Name: $name")
     }
 
-    private fun marginTop(){
+    fun marginTop(){
         WindowCompat.setDecorFitsSystemWindows(window, false)
         val root = findViewById<View>(R.id.placeHolder)
         ViewCompat.setOnApplyWindowInsetsListener(root) { view, insets ->

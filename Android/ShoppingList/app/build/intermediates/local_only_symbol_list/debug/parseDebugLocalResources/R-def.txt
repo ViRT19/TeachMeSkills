@@ -30,6 +30,7 @@ color red_dark
 color red_light
 color teal_700
 color white
+drawable bag
 drawable ic_bold
 drawable ic_color
 drawable ic_delete
