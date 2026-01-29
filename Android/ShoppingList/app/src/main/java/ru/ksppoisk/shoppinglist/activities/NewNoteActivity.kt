@@ -78,13 +78,14 @@ class NewNoteActivity : AppCompatActivity() {
 
     private fun getNote() {
         @Suppress("DEPRECATION")
+        Log.d("MyTag", Build.VERSION.SDK_INT.toString()+"   v="+Build.VERSION_CODES.TIRAMISU.toString())
         var sNote: NoteItem? =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
                 intent.getSerializableExtra(NoteFragment.NEW_NOTE_KEY, NoteItem::class.java)
             else
                 intent.getSerializableExtra(NoteFragment.NEW_NOTE_KEY) as NoteItem
         if (sNote != null) {
-            note = sNote as NoteItem
+            note = sNote
             fillNote()
         }
     }

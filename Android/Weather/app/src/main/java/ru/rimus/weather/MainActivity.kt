@@ -9,6 +9,7 @@ import org.json.JSONObject
 import ru.rimus.weather.databinding.ActivityMainBinding
 
 const val API_KEY = "297ffc1c3e944aefaaf93152221705"
+const val YANDEX_KEY = "e27948fd-03a3-4a29-b7be-49a83b6b17ec"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -21,8 +22,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun getResult(name: String){
-        val url = "https://api.weatherapi.com/v1/current.json" +
-                "?key=$API_KEY&q=$name&aqi=no"
+        val url = "https://api.weather.yandex.ru/v2/forecast?lat=52.37125&lon=4.89388' -H 'X-Yandex-Weather-Key:$YANDEX_KEY"
         val queue = Volley.newRequestQueue(this)
         val stringRequest = StringRequest(Request.Method.GET,
             url,
