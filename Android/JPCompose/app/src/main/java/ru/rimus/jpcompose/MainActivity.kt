@@ -4,12 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.End
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -87,12 +88,13 @@ fun CardJPC() {
                     modifier = Modifier.padding(end = 15.dp)
                 )
             }
+//            Spacer(modifier = Modifier.weight(1f),)
             Image(
                 painterResource(id = R.drawable.rodion),
                 contentDescription = "",
                 modifier = Modifier
+                    .padding(start = 20.dp)
                     .size(100.dp)
-                    .padding(start = 10.dp)
             )
         }
         Buttons()
