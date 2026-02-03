@@ -2,6 +2,7 @@ package ru.ksppoisk.shoppinglist.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
@@ -17,40 +18,53 @@ import android.view.MenuItem
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.preference.PreferenceManager
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.databinding.ActivityNewNoteBinding
 import ru.ksppoisk.shoppinglist.entities.NoteItem
 import ru.ksppoisk.shoppinglist.fragments.NoteFragment
 import ru.ksppoisk.shoppinglist.utils.HtmlManager
 import ru.ksppoisk.shoppinglist.utils.MyTouchListener
+import ru.ksppoisk.shoppinglist.utils.TimeManager
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
 class NewNoteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNewNoteBinding
+    private lateinit var defPref: SharedPreferences
     private var note: NoteItem? = null
+    private var pref: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNewNoteBinding.inflate(layoutInflater)
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
+            defPref = android.preference.PreferenceManager.getDefaultSharedPreferences(this)
+        else
+            defPref = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        setTheme(getSelectedTheme())
         setContentView(binding.root)
+        init()
         actionBarSettings()
         getNote()
         onClickColorPicker()
-        init()
-//      actionMenuCallBack() // Запуск удаления actionMenu при выделении
+        setTextSize()
+//        actionMenuCallBack() // Запуск удаления actionMenu при выделении
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun init() {
         binding.colorPicker.setOnTouchListener(MyTouchListener())
+        pref = PreferenceManager.getDefaultSharedPreferences(this)
     }
 
     private fun onClickColorPicker() = with(binding) {
@@ -64,13 +78,14 @@ class NewNoteActivity : AppCompatActivity() {
 
     private fun getNote() {
         @Suppress("DEPRECATION")
+        Log.d("MyTag", Build.VERSION.SDK_INT.toString()+"   v="+Build.VERSION_CODES.TIRAMISU.toString())
         var sNote: NoteItem? =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
                 intent.getSerializableExtra(NoteFragment.NEW_NOTE_KEY, NoteItem::class.java)
             else
                 intent.getSerializableExtra(NoteFragment.NEW_NOTE_KEY) as NoteItem
         if (sNote != null) {
-            note = sNote as NoteItem
+            note = sNote
             fillNote()
         }
     }
@@ -155,14 +170,9 @@ class NewNoteActivity : AppCompatActivity() {
             null,
             binding.edTitle.text.toString(),
             HtmlManager.toHtml(binding.edDescription.text),
-            getCurrentTime(),
+            TimeManager.getCurrentTime(),
             ""
         )
-    }
-
-    private fun getCurrentTime(): String {
-        val formatter = SimpleDateFormat("dd.MM.YYYY - hh:mm:ss", Locale.getDefault())
-        return formatter.format(Calendar.getInstance().time)
     }
 
     private fun actionBarSettings() {
@@ -227,4 +237,18 @@ class NewNoteActivity : AppCompatActivity() {
         binding.edDescription.customSelectionActionModeCallback = actionCallBack
     }
 
+    private fun setTextSize() = with(binding) {
+        edTitle.setTextSize(pref?.getString("title_size_key", "18"))
+        edDescription.setTextSize((pref?.getString("content_size_key", "16")))
+    }
+
+    private fun getSelectedTheme(): Int {
+        return if (defPref.getString("theme_key", "blue") == "blue")
+            R.style.Theme_NewNoteBlue
+        else R.style.Theme_NewNoteGreen
+    }
+
+    private fun EditText.setTextSize(size: String?) {
+        if (size != null) this.textSize = size.toFloat()
+    }
 }

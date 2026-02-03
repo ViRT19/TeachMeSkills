@@ -2,8 +2,10 @@ package ru.ksppoisk.shoppinglist.fragments
 
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +14,10 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.activities.MainApp
 import ru.ksppoisk.shoppinglist.activities.NewNoteActivity
@@ -25,6 +30,7 @@ class NoteFragment : BaseFragment(), NoteAdapter.Listener {
     private lateinit var binding: FragmentNoteBinding
     private lateinit var editLauncher: ActivityResultLauncher<Intent>
     private lateinit var adapter: NoteAdapter
+    private lateinit var defPref: SharedPreferences
     private val mainViewModel: MainViewModel by activityViewModels() {
         MainViewModel.MainViewModelFactory((context?.applicationContext as MainApp).database)
     }
@@ -53,9 +59,17 @@ class NoteFragment : BaseFragment(), NoteAdapter.Listener {
     }
 
     private fun initRcView() = with(binding) {
-        rcViewNote.layoutManager = LinearLayoutManager(activity)
-        adapter = NoteAdapter(this@NoteFragment)
+        @Suppress("DEPRECATION")
+        defPref = PreferenceManager.getDefaultSharedPreferences(activity)
+        rcViewNote.layoutManager = getLayoutManager()
+        adapter = NoteAdapter(this@NoteFragment, defPref)
         rcViewNote.adapter = adapter
+    }
+
+    private fun getLayoutManager(): RecyclerView.LayoutManager {
+        return if (defPref.getString("note_style_key", "Linear") == "Linear")
+            LinearLayoutManager(activity)
+        else StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
     }
 
     private fun observer() {
@@ -64,22 +78,6 @@ class NoteFragment : BaseFragment(), NoteAdapter.Listener {
         })
     }
 
-    /*    private fun onEditResult() {
-            editLauncher = registerForActivityResult(
-                ActivityResultContracts.StartActivityForResult()) {
-                if (it.resultCode == Activity.RESULT_OK) {
-                    mainViewModel.insertNote(it.data?.getSerializableExtra(NEW_NOTE_KEY) as NoteItem)
-                }
-
-            }
-        }
-        val noteItem : NoteItem? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        intent.getSerializableExtra(NEW_NOTE_KEY, NoteItem::class.java)
-    } else {
-        @Suppress("DEPRECATION")
-        intent.getSerializableExtra(NEW_NOTE_KEY) as? NoteItem
-    }
-    */
     private fun onEditResult() {
         editLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
