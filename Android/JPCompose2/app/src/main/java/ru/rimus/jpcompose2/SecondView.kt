@@ -22,34 +22,43 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import ru.rimus.jpcompose2.ui.theme.LightGreen
 import ru.rimus.jpcompose2.ui.theme.Pink80
 
 @Composable
 fun SecondView(navController: NavController) {
     Column(
-        modifier = Modifier.fillMaxSize()
-            .background(color = Pink80)
-            .padding(15.dp)) {
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = LightGreen)
+            .padding(15.dp)
+    ) {
 
-        Text(text="Second Screen",
-            fontSize= 46.sp,
+        Text(
+            text = "Second Screen",
+            fontSize = 46.sp,
             modifier = Modifier
                 .align(CenterHorizontally)
-                .padding(top = 20.dp))
+                .padding(top = 20.dp)
+        )
 
         Image(
             modifier = Modifier
-                .padding(top=20.dp)
-                .size(100.dp)
+                .padding(top = 30.dp)
+                .size(50.dp)
                 .align(Alignment.CenterHorizontally),
             painter = painterResource(id = R.drawable.jpcompose),
             contentDescription = "JPCompose"
         )
 
-        Button(onClick = {navController.navigate(route = Screen.HomeScreen.route)},
+        Button(
+            onClick = { navController.navigate(route = Screen.HomeScreen.route) },
             shape = RoundedCornerShape(6.dp),
-            modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Change to Home Screen", fontSize= 20.sp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 30.dp)
+        ) {
+            Text(text = "Change to Home Screen", fontSize = 20.sp)
         }
     }
 }

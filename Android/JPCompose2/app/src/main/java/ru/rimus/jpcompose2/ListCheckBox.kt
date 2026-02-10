@@ -15,11 +15,11 @@ import androidx.compose.ui.graphics.graphicsLayer
 
 @Composable
 fun ListCheckBox() {
-    var isChecked by remember() { mutableStateOf(false) }
+    val isChecked: MutableState<Boolean> = remember() { mutableStateOf(false) }
     Checkbox(
-        checked = isChecked,
+        checked = isChecked.value,
         onCheckedChange = { it ->
-            isChecked = it
+            isChecked.value = it
             Log.d("MyLog", it.toString())
         },
         modifier = Modifier.graphicsLayer(scaleX = 2f, scaleY = 2f)

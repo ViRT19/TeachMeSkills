@@ -1,7 +1,9 @@
 package ru.rimus.jpcompose2
 
+import android.R.attr.onClick
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -48,7 +51,7 @@ fun HomeView(navController: NavController) {
 
         Image(
             modifier = Modifier
-                .padding(top = 20.dp)
+                .padding(top = 10.dp)
                 .size(100.dp)
                 .align(Alignment.CenterHorizontally),
             painter = painterResource(id = R.drawable.jpcompose),
@@ -74,10 +77,13 @@ fun HomeView(navController: NavController) {
             items(100) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     ListCheckBox()
-                    Text(text = "Item ${it + 1}", fontSize = 20.sp)
+                    Text(text = "Item ${it + 1}", fontSize = 20.sp,
+                        modifier = Modifier
+                            .padding(start = 10.dp)
+                            .clickable {navController.navigate(route = Screen.SecondScreen.route)}
+                    )
                 }
             }
-
         }
     }
 }
