@@ -1,5 +1,6 @@
 package ru.rimus.jpcompose2
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.material3.Checkbox
 import androidx.compose.runtime.Composable
@@ -13,8 +14,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 
 
 @Composable
-fun ListCheckBox(state: MutableState<Boolean>) {
-    var isChecked by remember { mutableStateOf(state) }
+fun ListCheckBox() {
+    var isChecked by remember() { mutableStateOf(false) }
     Checkbox(
         checked = isChecked,
         onCheckedChange = { it ->
