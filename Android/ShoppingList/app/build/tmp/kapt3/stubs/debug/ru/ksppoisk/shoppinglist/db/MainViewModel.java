@@ -1,11 +1,15 @@
 package ru.ksppoisk.shoppinglist.db;
 
-@kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\u0018\u00002\u00020\u0001:\u0001\u0016B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0014\u001a\u00020\bJ\u000e\u0010\u0015\u001a\u00020\u00102\u0006\u0010\u0014\u001a\u00020\bR\u001d\u0010\u0005\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0011\u0010\u000b\u001a\u00020\f\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e\u00a8\u0006\u0017"}, d2 = {"Lru/ksppoisk/shoppinglist/db/MainViewModel;", "Landroidx/lifecycle/ViewModel;", "database", "Lru/ksppoisk/shoppinglist/db/MainDataBase;", "(Lru/ksppoisk/shoppinglist/db/MainDataBase;)V", "allNotes", "Landroidx/lifecycle/LiveData;", "", "Lru/ksppoisk/shoppinglist/entities/NoteItem;", "getAllNotes", "()Landroidx/lifecycle/LiveData;", "dao", "Lru/ksppoisk/shoppinglist/db/Dao;", "getDao", "()Lru/ksppoisk/shoppinglist/db/Dao;", "deleteNote", "Lkotlinx/coroutines/Job;", "id", "", "insertNote", "note", "updateNote", "MainViewModelFactory", "app_debug"})
+@kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0010\u0018\u00002\u00020\u0001:\u00013B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u000e\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aJ\u000e\u0010\u001b\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aJ\u0016\u0010\u001c\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u001eJ\u001a\u0010\u001f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020 0\u00070\u00062\u0006\u0010!\u001a\u00020\u001aJ\u000e\u0010\"\u001a\u00020\u00182\u0006\u0010#\u001a\u00020$J\u000e\u0010%\u001a\u00020\u00182\u0006\u0010&\u001a\u00020\bJ\u000e\u0010\'\u001a\u00020\u00182\u0006\u0010(\u001a\u00020 J\u000e\u0010)\u001a\u00020\u00182\u0006\u0010*\u001a\u00020\fJ\u0016\u0010+\u001a\u00020\u001e2\u0006\u0010#\u001a\u00020$H\u0082@\u00a2\u0006\u0002\u0010,J\u000e\u0010-\u001a\u00020\u00182\u0006\u0010.\u001a\u00020\u0014J\u000e\u0010/\u001a\u00020\u00182\u0006\u0010.\u001a\u00020 J\u000e\u00100\u001a\u00020\u00182\u0006\u00101\u001a\u00020\fJ\u000e\u00102\u001a\u00020\u00182\u0006\u0010&\u001a\u00020\bR\u001d\u0010\u0005\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u001d\u0010\u000b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u00070\u0006\u00a2\u0006\b\n\u0000\u001a\u0004\b\r\u0010\nR\u0011\u0010\u000e\u001a\u00020\u000f\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001d\u0010\u0012\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u00070\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016\u00a8\u00064"}, d2 = {"Lru/ksppoisk/shoppinglist/db/MainViewModel;", "Landroidx/lifecycle/ViewModel;", "database", "Lru/ksppoisk/shoppinglist/db/MainDataBase;", "(Lru/ksppoisk/shoppinglist/db/MainDataBase;)V", "allNotes", "Landroidx/lifecycle/LiveData;", "", "Lru/ksppoisk/shoppinglist/entities/NoteItem;", "getAllNotes", "()Landroidx/lifecycle/LiveData;", "allShopListNames", "Lru/ksppoisk/shoppinglist/entities/ShopListNameItem;", "getAllShopListNames", "dao", "Lru/ksppoisk/shoppinglist/db/Dao;", "getDao", "()Lru/ksppoisk/shoppinglist/db/Dao;", "libraryItems", "Landroidx/lifecycle/MutableLiveData;", "Lru/ksppoisk/shoppinglist/entities/LibraryItem;", "getLibraryItems", "()Landroidx/lifecycle/MutableLiveData;", "deleteLibraryItem", "Lkotlinx/coroutines/Job;", "id", "", "deleteNote", "deleteShopList", "deleteList", "", "getAllItemsFromList", "Lru/ksppoisk/shoppinglist/entities/ShopListItem;", "listId", "getAllLibraryItems", "name", "", "insertNote", "note", "insertShopItem", "shopListItem", "insertShopListName", "listName", "isLibraryItemExists", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateLibraryItem", "item", "updateListItem", "updateListName", "shopListName", "updateNote", "MainViewModelFactory", "app_debug"})
 public final class MainViewModel extends androidx.lifecycle.ViewModel {
     @org.jetbrains.annotations.NotNull()
     private final ru.ksppoisk.shoppinglist.db.Dao dao = null;
     @org.jetbrains.annotations.NotNull()
+    private final androidx.lifecycle.MutableLiveData<java.util.List<ru.ksppoisk.shoppinglist.entities.LibraryItem>> libraryItems = null;
+    @org.jetbrains.annotations.NotNull()
     private final androidx.lifecycle.LiveData<java.util.List<ru.ksppoisk.shoppinglist.entities.NoteItem>> allNotes = null;
+    @org.jetbrains.annotations.NotNull()
+    private final androidx.lifecycle.LiveData<java.util.List<ru.ksppoisk.shoppinglist.entities.ShopListNameItem>> allShopListNames = null;
     
     public MainViewModel(@org.jetbrains.annotations.NotNull()
     ru.ksppoisk.shoppinglist.db.MainDataBase database) {
@@ -18,7 +22,28 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     }
     
     @org.jetbrains.annotations.NotNull()
+    public final androidx.lifecycle.MutableLiveData<java.util.List<ru.ksppoisk.shoppinglist.entities.LibraryItem>> getLibraryItems() {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
     public final androidx.lifecycle.LiveData<java.util.List<ru.ksppoisk.shoppinglist.entities.NoteItem>> getAllNotes() {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final androidx.lifecycle.LiveData<java.util.List<ru.ksppoisk.shoppinglist.entities.ShopListNameItem>> getAllShopListNames() {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final androidx.lifecycle.LiveData<java.util.List<ru.ksppoisk.shoppinglist.entities.ShopListItem>> getAllItemsFromList(int listId) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job getAllLibraryItems(@org.jetbrains.annotations.NotNull()
+    java.lang.String name) {
         return null;
     }
     
@@ -29,13 +54,57 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     }
     
     @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job insertShopListName(@org.jetbrains.annotations.NotNull()
+    ru.ksppoisk.shoppinglist.entities.ShopListNameItem listName) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job insertShopItem(@org.jetbrains.annotations.NotNull()
+    ru.ksppoisk.shoppinglist.entities.ShopListItem shopListItem) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
     public final kotlinx.coroutines.Job updateNote(@org.jetbrains.annotations.NotNull()
     ru.ksppoisk.shoppinglist.entities.NoteItem note) {
         return null;
     }
     
     @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job updateLibraryItem(@org.jetbrains.annotations.NotNull()
+    ru.ksppoisk.shoppinglist.entities.LibraryItem item) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job updateListItem(@org.jetbrains.annotations.NotNull()
+    ru.ksppoisk.shoppinglist.entities.ShopListItem item) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job updateListName(@org.jetbrains.annotations.NotNull()
+    ru.ksppoisk.shoppinglist.entities.ShopListNameItem shopListName) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
     public final kotlinx.coroutines.Job deleteNote(int id) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job deleteLibraryItem(int id) {
+        return null;
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final kotlinx.coroutines.Job deleteShopList(int id, boolean deleteList) {
+        return null;
+    }
+    
+    private final java.lang.Object isLibraryItemExists(java.lang.String name, kotlin.coroutines.Continuation<? super java.lang.Boolean> $completion) {
         return null;
     }
     
