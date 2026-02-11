@@ -1,18 +1,16 @@
-import com.android.tools.r8.internal.im
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "ru.rimus.jpcompose2"
+    namespace = "ru.rimus.jpcompose3"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "ru.rimus.jpcompose2"
+        applicationId = "ru.rimus.jpcompose3"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -48,7 +46,6 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.runtime.saveable)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -56,6 +53,14 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation("androidx.navigation:navigation-runtime-ktx:2.9.7")
-    implementation("androidx.navigation:navigation-compose:2.9.7")
+
+    implementation("androidx.compose.ui:ui:1.6.0")
+    implementation("androidx.compose.material:material:1.6.0")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.0")
+
+    implementation("androidx.compose.material:material-icons-extended:1.6.0")
 }

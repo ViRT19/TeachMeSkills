@@ -1,5 +1,4 @@
 package ru.rimus.jpcompose2
-// https://www.youtube.com/watch?v=HhW5lGNI9Us
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
