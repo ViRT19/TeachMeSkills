@@ -155,22 +155,8 @@ fun WordCard(
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
-
-                Spacer(modifier = Modifier.height(4.dp))
-
-/*                Text(
-                    text = wordItem.category,
-                    fontSize = 14.sp,
-                    color = MaterialTheme.colors.primary
-                )*/
             }
 
-            // Индикатор для перехода
-            Text(
-                text = "->",
-                fontSize = 20.sp,
-                color = Color.Gray
-            )
         }
     }
 }

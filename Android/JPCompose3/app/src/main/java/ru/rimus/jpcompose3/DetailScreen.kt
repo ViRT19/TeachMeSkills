@@ -41,9 +41,8 @@ fun DetailScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(paddingValues)
-                    .verticalScroll(rememberScrollState())
-                    .padding(24.dp),
-                horizontalAlignment = Alignment.Start
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 // Заголовок
                 Text(
@@ -52,29 +51,6 @@ fun DetailScreen(
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colors.primary
                 )
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                // Категория
-
-/*                    Text(
-                        text = word.category,
-                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-                        color = MaterialTheme.colors.primary
-                    )*/
-
-                Divider(thickness = 1.dp)
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                // Описание
-/*                Text(
-                    text = "Описание:",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
-                )
-
-                Spacer(modifier = Modifier.height(8.dp))*/
 
                 Card(
                     modifier = Modifier.fillMaxWidth(),
@@ -89,39 +65,6 @@ fun DetailScreen(
                     )
                 }
 
-                Spacer(modifier = Modifier.height(24.dp))
-
-                // Дополнительная информация
-                Text(
-                    text = "Дополнительная информация:",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
-                )
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    elevation = 2.dp
-                ) {
-                    Column(
-                        modifier = Modifier.padding(16.dp)
-                    ) {
-                        InfoRow(label = "ID", value = word.id.toString())
-                        InfoRow(label = "Статус", value = if (word.isChecked) "Выбрано" else "Не выбрано")
-                        InfoRow(label = "Длина слова", value = "${word.word.length} символов")
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // Подсказка
-                Text(
-                    text = "v Состояние чекбокса сохраняется при возврате на главный экран",
-                    fontSize = 14.sp,
-                    color = Color.Gray,
-                    modifier = Modifier.padding(top = 16.dp)
-                )
             }
         } else {
             Box(
