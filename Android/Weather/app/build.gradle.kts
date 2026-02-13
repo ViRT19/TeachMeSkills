@@ -45,15 +45,8 @@ dependencies {
     implementation("androidx.compose.material:material:1.6.0")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-
-    // Для сетевых запросов
     implementation("com.android.volley:volley:1.2.1")
-
-    // Для парсинга JSON
     implementation("com.google.code.gson:gson:2.10.1")
-
-    // Для корутин
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
