@@ -3,6 +3,7 @@ local
 anim close_color_picker
 anim open_color_picker
 color black
+color dark_gray
 color green
 color picker_black
 color picker_blue
@@ -33,9 +34,11 @@ drawable ic_style
 drawable ic_text
 drawable ic_theme_style
 drawable ic_time_format
+id bCreate
 id bNav
 id colorPicker
 id edDescription
+id edNewListName
 id edTitle
 id id_bold
 id id_color
@@ -56,12 +59,14 @@ id placeHolder
 id rcViewNote
 id settings
 id shop_lst
+id textView
 id tvDescription
 id tvTime
 id tvTitle
 layout activity_main
 layout activity_new_note
 layout fragment_note
+layout new_list_dialog
 layout note_list_item
 menu bottom_menu
 menu new_note_menu
@@ -74,7 +79,9 @@ string app_name
 string bold
 string color
 string description_hint
+string list_name
 string new_item
+string new_list
 string notes
 string save
 string settings

@@ -1,4 +1,4 @@
-#Thu Dec 18 12:57:58 MSK 2025
+#Sun Dec 21 19:43:17 MSK 2025
 base.0=D\:\\RT\\Dev\\TeachMeSkills\\Android\\ShoppingList\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\RT\\Dev\\TeachMeSkills\\Android\\ShoppingList\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=D\:\\RT\\Dev\\TeachMeSkills\\Android\\ShoppingList\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex

@@ -4,7 +4,9 @@
     <string name="bold">Bold</string>
     <string name="color">Color</string>
     <string name="description_hint">Description</string>
+    <string name="list_name">List Name</string>
     <string name="new_item">New Item</string>
+    <string name="new_list">New List Name</string>
     <string name="notes">Notes</string>
     <string name="save">Save</string>
     <string name="settings">Settings</string>

@@ -8,10 +8,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ru.ksppoisk.shoppinglist.R
 import ru.ksppoisk.shoppinglist.databinding.ActivityMainBinding
+import ru.ksppoisk.shoppinglist.dialogs.NewListDialog
 import ru.ksppoisk.shoppinglist.fragments.FragmentManager
 import ru.ksppoisk.shoppinglist.fragments.NoteFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), NewListDialog.Listener {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +34,15 @@ class MainActivity : AppCompatActivity() {
                     Log.d("MyLog", "Shop List")
                 }
                 R.id.new_item -> {
-                    FragmentManager.currentFrag?.onClickNew()
+                //    FragmentManager.currentFrag?.onClickNew()
+                    NewListDialog.showDialog(this, this)
                 }
             }
             true
         }
+    }
+
+    override fun onClick(name: String) {
+        Log.d("MyLog", "Name: $name")
     }
 }

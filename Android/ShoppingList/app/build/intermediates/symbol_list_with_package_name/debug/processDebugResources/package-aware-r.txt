@@ -1617,6 +1617,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_gray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -3892,6 +3893,7 @@ id autoHide
 id autoLimit
 id availableSpace
 id axisRelative
+id bCreate
 id bNav
 id barrier
 id baseline
@@ -3985,6 +3987,7 @@ id easeInOut
 id easeOut
 id east
 id edDescription
+id edNewListName
 id edTitle
 id edge
 id edit_query
@@ -4306,6 +4309,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4561,6 +4565,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
+layout new_list_dialog
 layout note_list_item
 layout notification_action
 layout notification_action_tombstone
@@ -4673,6 +4678,7 @@ string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string list_name
 string m3_exceed_max_badge_text_suffix
 string m3_loading_indicator_content_description
 string m3_ref_typeface_brand_medium
@@ -4781,6 +4787,7 @@ string mtrl_timepicker_confirm
 string nav_rail_collapsed_a11y_label
 string nav_rail_expanded_a11y_label
 string new_item
+string new_list
 string not_set
 string notes
 string offline_notification_text
