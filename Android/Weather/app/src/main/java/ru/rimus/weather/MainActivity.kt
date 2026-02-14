@@ -13,7 +13,7 @@ import ru.rimus.weather.fetchYandexWeatherJson
 
 class MainActivity : ComponentActivity() {
 
-    private val API_KEY = "123e4567-e89b-12d3-a456-426614174000"
+    private val API_KEY = "123e4567-e89b-12d3-a456-4000"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
